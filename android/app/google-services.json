@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "25984257291",
+    "project_id": "connect-coffee-dfbda",
+    "storage_bucket": "connect-coffee-dfbda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25984257291:android:849fb2018c510fb379a60e",
+        "android_client_info": {
+          "package_name": "com.example.connect_coffee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADLiyFL1zNhvPzRq3z6RECl7NiRccVL00"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
