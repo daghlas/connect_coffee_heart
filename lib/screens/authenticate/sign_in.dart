@@ -9,6 +9,10 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  // FormTextField Values
+  late String email = '';
+  late String password = '';
+
   final AuthService _auth = AuthService();
 
   @override
@@ -27,23 +31,33 @@ class _SignInState extends State<SignIn> {
           child: Column(children: <Widget>[
             const SizedBox(height: 20.0),
             TextFormField(
-              onChanged: (val) {},
+              onChanged: (val) {
+                setState(() {
+                  email = val;
+                });
+              },
             ),
             const SizedBox(height: 20.0),
             TextFormField(
               obscureText: true,
-              onChanged: (val) {},
+              onChanged: (val) {
+                setState(() {
+                  password = val;
+                });
+              },
             ),
             const SizedBox(height: 40.0),
             ElevatedButton(
               onPressed: () async {
-                dynamic result = await _auth.signInAnon();
-                if (result == null) {
-                  print('Sign in failed');
-                } else {
-                  print('Sign in succeeded');
-                  print(result.uid);
-                }
+                // dynamic result = await _auth.signInAnon();
+                // if (result == null) {
+                //   print('Sign in failed');
+                // } else {
+                //   print('Sign in succeeded');
+                //   print(result.uid);
+                // }
+                print(email);
+                print(password);
               },
               style:
                   ElevatedButton.styleFrom(foregroundColor: Colors.brown[400]),
