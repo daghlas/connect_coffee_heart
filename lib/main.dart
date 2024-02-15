@@ -2,7 +2,6 @@ import 'package:connect_coffee/firebase_options.dart';
 import 'package:connect_coffee/models/user.dart';
 import 'package:connect_coffee/screens/auth.dart';
 import 'package:connect_coffee/screens/wrapper.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

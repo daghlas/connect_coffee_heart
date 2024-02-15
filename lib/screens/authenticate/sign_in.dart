@@ -17,13 +17,13 @@ class _SignInState extends State<SignIn> {
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
+        foregroundColor: Colors.white,
         elevation: 0.0,
-        title: const Text('Sign in to connect coffee'),
+        title: const Text('Sign in to Connect Coffee'),
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: ElevatedButton(
-          child: const Text('Sign in Anonymously'),
           onPressed: () async {
             dynamic result = await _auth.signInAnon();
             if (result == null) {
@@ -33,6 +33,8 @@ class _SignInState extends State<SignIn> {
               print(result.uid);
             }
           },
+          style: ElevatedButton.styleFrom(foregroundColor: Colors.brown[400]),
+          child: const Text('Sign in Anonymously'),
         ),
       ),
     );
