@@ -23,18 +23,33 @@ class _SignInState extends State<SignIn> {
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
-        child: ElevatedButton(
-          onPressed: () async {
-            dynamic result = await _auth.signInAnon();
-            if (result == null) {
-              print('Sign in failed');
-            } else {
-              print('Sign in succeeded');
-              print(result.uid);
-            }
-          },
-          style: ElevatedButton.styleFrom(foregroundColor: Colors.brown[400]),
-          child: const Text('Sign in Anonymously'),
+        child: Form(
+          child: Column(children: <Widget>[
+            const SizedBox(height: 20.0),
+            TextFormField(
+              onChanged: (val) {},
+            ),
+            const SizedBox(height: 20.0),
+            TextFormField(
+              obscureText: true,
+              onChanged: (val) {},
+            ),
+            const SizedBox(height: 40.0),
+            ElevatedButton(
+              onPressed: () async {
+                dynamic result = await _auth.signInAnon();
+                if (result == null) {
+                  print('Sign in failed');
+                } else {
+                  print('Sign in succeeded');
+                  print(result.uid);
+                }
+              },
+              style:
+                  ElevatedButton.styleFrom(foregroundColor: Colors.brown[400]),
+              child: const Text('Sign in'),
+            ),
+          ]),
         ),
       ),
     );
