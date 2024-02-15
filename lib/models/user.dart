@@ -1,5 +1,5 @@
-class User {
-  // final String uid;
+class FireUser {
+  final String uid;
 
-  // User({this.uid});
+  FireUser({required this.uid});
 }
