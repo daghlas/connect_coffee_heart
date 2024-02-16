@@ -24,6 +24,20 @@ class _RegisterState extends State<Register> {
         foregroundColor: Colors.white,
         elevation: 0.0,
         title: const Text('Register to Connect Coffee'),
+        actions: <Widget>[
+          ElevatedButton.icon(
+            onPressed: () async {
+              print('Sign In');
+            },
+            icon: const Icon(Icons.person),
+            label: const Text('Sign In'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.brown[400],
+              foregroundColor: Colors.black,
+              elevation: 0.0,
+            ),
+          )
+        ],
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),

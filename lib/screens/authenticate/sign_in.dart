@@ -24,6 +24,20 @@ class _SignInState extends State<SignIn> {
         foregroundColor: Colors.white,
         elevation: 0.0,
         title: const Text('Sign in to Connect Coffee'),
+        actions: <Widget>[
+          ElevatedButton.icon(
+            onPressed: () async {
+              print('Register');
+            },
+            icon: const Icon(Icons.person),
+            label: const Text('Register'),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.brown[400],
+              foregroundColor: Colors.black,
+              elevation: 0.0,
+            ),
+          )
+        ],
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
@@ -49,13 +63,13 @@ class _SignInState extends State<SignIn> {
             const SizedBox(height: 40.0),
             ElevatedButton(
               onPressed: () async {
-                // dynamic result = await _auth.signInAnon();
-                // if (result == null) {
-                //   print('Sign in failed');
-                // } else {
-                //   print('Sign in succeeded');
-                //   print(result.uid);
-                // }
+                dynamic result = await _auth.signInAnon();
+                if (result == null) {
+                  print('Sign in failed');
+                } else {
+                  print('Sign in succeeded');
+                  print(result.uid);
+                }
                 print(email);
                 print(password);
               },
