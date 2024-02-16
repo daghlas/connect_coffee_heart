@@ -2,7 +2,9 @@ import 'package:connect_coffee/screens/auth.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+  const SignIn({super.key, required this.toggleView});
+
+  final Function toggleView;
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -28,6 +30,7 @@ class _SignInState extends State<SignIn> {
           ElevatedButton.icon(
             onPressed: () async {
               print('Register');
+              widget.toggleView();
             },
             icon: const Icon(Icons.person),
             label: const Text('Register'),
