@@ -1,4 +1,3 @@
-import 'package:connect_coffee/screens/auth.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -14,8 +13,6 @@ class _RegisterState extends State<Register> {
   // FormTextField Values
   late String email = '';
   late String password = '';
-
-  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -66,13 +63,6 @@ class _RegisterState extends State<Register> {
             const SizedBox(height: 40.0),
             ElevatedButton(
               onPressed: () async {
-                // dynamic result = await _auth.signInAnon();
-                // if (result == null) {
-                //   print('Sign in failed');
-                // } else {
-                //   print('Sign in succeeded');
-                //   print(result.uid);
-                // }
                 print(email);
                 print(password);
               },
