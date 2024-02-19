@@ -77,7 +77,7 @@ class _RegisterState extends State<Register> {
                       await _auth.registerWithEmailAndPassword(email, password);
                   if (result == null) {
                     setState(() {
-                      error = 'required field cannot be blank';
+                      error = 'enter a valid email';
                     });
                   }
                   print(email);
@@ -88,6 +88,11 @@ class _RegisterState extends State<Register> {
                   ElevatedButton.styleFrom(foregroundColor: Colors.brown[400]),
               child: const Text('Register'),
             ),
+            const SizedBox(height: 20.0),
+            Text(
+              error,
+              style: const TextStyle(color: Colors.red, fontSize: 14.0),
+            )
           ]),
         ),
       ),
