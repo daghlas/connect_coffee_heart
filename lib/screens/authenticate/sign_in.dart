@@ -16,6 +16,7 @@ class _SignInState extends State<SignIn> {
   late String password = '';
 
   final AuthService _auth = AuthService();
+  final _formalKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +46,11 @@ class _SignInState extends State<SignIn> {
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Form(
+          key: _formalKey,
           child: Column(children: <Widget>[
             const SizedBox(height: 20.0),
             TextFormField(
+              validator: (val) => val!.isEmpty ? 'Enter email' : null,
               onChanged: (val) {
                 setState(() {
                   email = val;
@@ -57,6 +60,7 @@ class _SignInState extends State<SignIn> {
             const SizedBox(height: 20.0),
             TextFormField(
               obscureText: true,
+              validator: (val) => val!.length < 6 ? 'Enter password' : null,
               onChanged: (val) {
                 setState(() {
                   password = val;
@@ -66,15 +70,17 @@ class _SignInState extends State<SignIn> {
             const SizedBox(height: 40.0),
             ElevatedButton(
               onPressed: () async {
-                dynamic result = await _auth.signInAnon();
-                if (result == null) {
-                  print('Sign in failed');
-                } else {
-                  print('Sign in succeeded');
-                  print(result.uid);
+                if (_formalKey.currentState!.validate()) {
+                  dynamic result = await _auth.signInAnon();
+                  if (result == null) {
+                    print('Sign in failed');
+                  } else {
+                    print('Sign in succeeded');
+                    print(result.uid);
+                  }
+                  print(email);
+                  print(password);
                 }
-                print(email);
-                print(password);
               },
               style:
                   ElevatedButton.styleFrom(foregroundColor: Colors.brown[400]),

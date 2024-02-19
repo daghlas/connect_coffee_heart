@@ -14,6 +14,7 @@ class _RegisterState extends State<Register> {
   // FormTextField Values
   late String email = '';
   late String password = '';
+  late String error = '';
 
   final AuthService _auth = AuthService();
   final _formalKey = GlobalKey<FormState>();
@@ -72,6 +73,13 @@ class _RegisterState extends State<Register> {
             ElevatedButton(
               onPressed: () async {
                 if (_formalKey.currentState!.validate()) {
+                  dynamic result =
+                      await _auth.registerWithEmailAndPassword(email, password);
+                  if (result == null) {
+                    setState(() {
+                      error = 'required field cannot be blank';
+                    });
+                  }
                   print(email);
                   print(password);
                 }
