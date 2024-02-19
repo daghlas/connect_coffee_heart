@@ -1,3 +1,4 @@
+import 'package:connect_coffee/screens/auth.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -13,6 +14,9 @@ class _RegisterState extends State<Register> {
   // FormTextField Values
   late String email = '';
   late String password = '';
+
+  final AuthService _auth = AuthService();
+  final _formalKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +46,11 @@ class _RegisterState extends State<Register> {
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Form(
+          key: _formalKey,
           child: Column(children: <Widget>[
             const SizedBox(height: 20.0),
             TextFormField(
+              validator: (val) => val!.isEmpty ? 'Enter email' : null,
               onChanged: (val) {
                 setState(() {
                   email = val;
@@ -54,6 +60,8 @@ class _RegisterState extends State<Register> {
             const SizedBox(height: 20.0),
             TextFormField(
               obscureText: true,
+              validator: (val) =>
+                  val!.length < 6 ? 'Enter longer password' : null,
               onChanged: (val) {
                 setState(() {
                   password = val;
@@ -63,8 +71,10 @@ class _RegisterState extends State<Register> {
             const SizedBox(height: 40.0),
             ElevatedButton(
               onPressed: () async {
-                print(email);
-                print(password);
+                if (_formalKey.currentState!.validate()) {
+                  print(email);
+                  print(password);
+                }
               },
               style:
                   ElevatedButton.styleFrom(foregroundColor: Colors.brown[400]),
