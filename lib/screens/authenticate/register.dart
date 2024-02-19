@@ -1,4 +1,5 @@
 import 'package:connect_coffee/screens/auth.dart';
+import 'package:connect_coffee/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -51,6 +52,7 @@ class _RegisterState extends State<Register> {
           child: Column(children: <Widget>[
             const SizedBox(height: 20.0),
             TextFormField(
+              decoration: textInputDecoration.copyWith(hintText: 'Enter Email'),
               validator: (val) => val!.isEmpty ? 'Enter email' : null,
               onChanged: (val) {
                 setState(() {
@@ -60,6 +62,8 @@ class _RegisterState extends State<Register> {
             ),
             const SizedBox(height: 20.0),
             TextFormField(
+              decoration:
+                  textInputDecoration.copyWith(hintText: 'Create Password'),
               obscureText: true,
               validator: (val) =>
                   val!.length < 6 ? 'Enter valid password' : null,
