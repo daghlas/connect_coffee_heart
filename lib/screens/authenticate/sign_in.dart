@@ -14,6 +14,7 @@ class _SignInState extends State<SignIn> {
   // FormTextField Values
   late String email = '';
   late String password = '';
+  late String error = '';
 
   final AuthService _auth = AuthService();
   final _formalKey = GlobalKey<FormState>();
@@ -71,12 +72,12 @@ class _SignInState extends State<SignIn> {
             ElevatedButton(
               onPressed: () async {
                 if (_formalKey.currentState!.validate()) {
-                  dynamic result = await _auth.signInAnon();
+                  dynamic result =
+                      await _auth.signInWithEmailAndPassword(email, password);
                   if (result == null) {
-                    print('Sign in failed');
-                  } else {
-                    print('Sign in succeeded');
-                    print(result.uid);
+                    setState(() {
+                      error = 'Sign in failed, WRONG CREDENTIALS';
+                    });
                   }
                   print(email);
                   print(password);
@@ -86,6 +87,11 @@ class _SignInState extends State<SignIn> {
                   ElevatedButton.styleFrom(foregroundColor: Colors.brown[400]),
               child: const Text('Sign in'),
             ),
+            const SizedBox(height: 20.0),
+            Text(
+              error,
+              style: const TextStyle(color: Colors.red, fontSize: 14.0),
+            )
           ]),
         ),
       ),
