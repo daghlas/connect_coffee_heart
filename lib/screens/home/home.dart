@@ -1,4 +1,4 @@
-import 'package:connect_coffee/screens/auth.dart';
+import 'package:connect_coffee/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:connect_coffee/screens/auth.dart';
+import 'package:connect_coffee/services/auth.dart';
 import 'package:connect_coffee/shared/constants.dart';
 import 'package:connect_coffee/shared/loading.dart';
 import 'package:flutter/material.dart';
