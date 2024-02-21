@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseService {
-  final String uid;
-  DatabaseService({required this.uid});
+  final String? uid;
+  DatabaseService({this.uid});
 
   // collection ref
   final CollectionReference connectCollection =
@@ -14,5 +14,10 @@ class DatabaseService {
       'name': name,
       'strength': strength,
     });
+  }
+
+  // get connect stream
+  Stream<QuerySnapshot> get connects {
+    return connectCollection.snapshots();
   }
 }
