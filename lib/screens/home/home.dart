@@ -13,7 +13,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamProvider<QuerySnapshot?>.value(
-      value: DatabaseService().connects,
+      value: DatabaseService().connects, // connect_coffee
       initialData: null,
       child: Scaffold(
         backgroundColor: Colors.brown[100],
