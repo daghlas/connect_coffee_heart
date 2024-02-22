@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:connect_coffee/models/connect.dart';
 import 'package:connect_coffee/screens/home/connect_list.dart';
 import 'package:connect_coffee/services/auth.dart';

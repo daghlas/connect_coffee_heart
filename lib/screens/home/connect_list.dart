@@ -13,14 +13,14 @@ class ConnectList extends StatefulWidget {
 class _ConnectListState extends State<ConnectList> {
   @override
   Widget build(BuildContext context) {
-    final connects = Provider.of<List<ConnectCoffee>>(context);
+    final connects = Provider.of<List<ConnectCoffee>?>(context);
     // print Connects from firebase
-    for (var connect in connects) {
+    connects?.forEach((connect) {
       // connect_coffee
       print(connect.name);
       print(connect.sugars);
       print(connect.strength);
-    }
+    });
 
     return Container();
   }
