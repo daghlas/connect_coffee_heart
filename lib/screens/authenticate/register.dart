@@ -1,6 +1,7 @@
 import 'package:connect_coffee/services/auth.dart';
 import 'package:connect_coffee/shared/constants.dart';
 import 'package:connect_coffee/shared/loading.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -38,7 +39,9 @@ class _RegisterState extends State<Register> {
               actions: <Widget>[
                 ElevatedButton.icon(
                   onPressed: () async {
-                    print('Sign In');
+                    if (kDebugMode) {
+                      print('Sign In');
+                    }
                     widget.toggleView();
                   },
                   icon: const Icon(Icons.person),
