@@ -1,4 +1,5 @@
 import 'package:connect_coffee/models/connect.dart';
+import 'package:connect_coffee/screens/home/connect_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +23,11 @@ class _ConnectListState extends State<ConnectList> {
       print(connect.strength);
     });
 
-    return Container();
+    // show/display connects from firebase
+    return ListView.builder(
+        itemCount: connects.length,
+        itemBuilder: (context, index) {
+          return ConnectTile(connectCoffee: connects![index]);
+        });
   }
 }
