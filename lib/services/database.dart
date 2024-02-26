@@ -24,7 +24,7 @@ class DatabaseService {
       return ConnectCoffee(
         name: doc['name'] ?? '',
         sugars: doc['sugars'] ?? '0',
-        strength: doc['strenght'] ?? 0,
+        strength: doc['strength'] ?? 0,
       );
     }).toList();
   }
