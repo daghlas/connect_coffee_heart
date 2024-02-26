@@ -25,7 +25,7 @@ class _ConnectListState extends State<ConnectList> {
 
     // show/display connects from firebase
     return ListView.builder(
-        itemCount: connects.length,
+        itemCount: connects?.length,
         itemBuilder: (context, index) {
           return ConnectTile(connectCoffee: connects![index]);
         });
