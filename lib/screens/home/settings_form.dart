@@ -40,16 +40,28 @@ class _SettingsFormState extends State<SettingsForm> {
           const SizedBox(height: 20.0),
           // drop down
           DropdownButtonFormField(
+            decoration: textInputDecoration,
             items: sugars.map((sugar) {
               return DropdownMenuItem(
                 value: sugar,
                 child: Text('$sugar sugars'),
               );
             }).toList(),
-            onChanged: (String? value) {},
+            onChanged: (val) => setState(() {
+              _currentSugars = val;
+            }),
           ),
           const SizedBox(height: 20.0),
           // slider
+          Slider(
+              min: 100.0,
+              max: 900.0,
+              divisions: 8,
+              value: (_currentStrength ?? 100).toDouble(),
+              onChanged: (val) => setState(() {
+                    _currentStrength = val.round();
+                  })),
+          const SizedBox(height: 20.0),
           ElevatedButton(
             onPressed: () async {
               print(_currentName);
