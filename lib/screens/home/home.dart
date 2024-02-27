@@ -12,6 +12,18 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void showSettingsPannel() {
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return Container(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+              child: const Text('bottom sheet'),
+            );
+          });
+    }
+
     return StreamProvider<List<ConnectCoffee>?>.value(
       value: DatabaseService().connects, // connect_coffee
       initialData: null,
@@ -34,7 +46,19 @@ class Home extends StatelessWidget {
                 foregroundColor: Colors.black,
                 elevation: 0.0,
               ),
-            )
+            ),
+            ElevatedButton.icon(
+              onPressed: () {
+                showSettingsPannel();
+              },
+              icon: const Icon(Icons.settings),
+              label: const Text('Settings'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.brown[400],
+                foregroundColor: Colors.black,
+                elevation: 0.0,
+              ),
+            ),
           ],
         ),
         body: const ConnectList(),
