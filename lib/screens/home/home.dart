@@ -1,5 +1,6 @@
 import 'package:connect_coffee/models/connect.dart';
 import 'package:connect_coffee/screens/home/connect_list.dart';
+import 'package:connect_coffee/screens/home/settings_form.dart';
 import 'package:connect_coffee/services/auth.dart';
 import 'package:connect_coffee/services/database.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // bottom sheet
     void showSettingsPannel() {
       showModalBottomSheet(
           context: context,
@@ -19,7 +21,7 @@ class Home extends StatelessWidget {
             return Container(
               padding:
                   const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-              child: const Text('bottom sheet'),
+              child: const SettingsForm(),
             );
           });
     }
