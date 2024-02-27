@@ -15,9 +15,19 @@ class _ConnectListState extends State<ConnectList> {
   @override
   Widget build(BuildContext context) {
     final connects = Provider.of<List<ConnectCoffee>?>(context);
+    // print values from firebase
+    // for (var connect in connects!) {
+    //   connects.forEach((connect) {
+    //     // connect_coffee
+    //     print(connect.name);
+    //     print(connect.sugars);
+    //     print(connect.strength);
+    //   });
+    // }
+
     // show/display connects from firebase
     return ListView.builder(
-      itemCount: connects?.length,
+      itemCount: connects?.length ?? 0, // Provide a default value for itemCount
       itemBuilder: (context, index) {
         return ConnectTile(connectCoffee: connects![index]);
       },
