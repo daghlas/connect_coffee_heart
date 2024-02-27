@@ -44,20 +44,23 @@ class _SettingsFormState extends State<SettingsForm> {
             items: sugars.map((sugar) {
               return DropdownMenuItem(
                 value: sugar,
-                child: Text('$sugar sugars'),
+                child: Text('$sugar sugar(s)'),
               );
             }).toList(),
             onChanged: (val) => setState(() {
               _currentSugars = val;
             }),
           ),
-          const SizedBox(height: 20.0),
+          const SizedBox(height: 30.0),
           // slider
+          const Text('Slide across to select brew strength'),
           Slider(
               min: 100.0,
               max: 900.0,
               divisions: 8,
               value: (_currentStrength ?? 100).toDouble(),
+              activeColor: Colors.brown[_currentStrength ?? 100],
+              inactiveColor: Colors.brown[_currentStrength ?? 100],
               onChanged: (val) => setState(() {
                     _currentStrength = val.round();
                   })),
