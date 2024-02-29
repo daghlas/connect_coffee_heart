@@ -84,9 +84,21 @@ class _SettingsFormState extends State<SettingsForm> {
                   const SizedBox(height: 20.0),
                   ElevatedButton(
                     onPressed: () async {
+                      // print form details to console
                       print(_currentName);
                       print(_currentSugars);
                       print(_currentStrength);
+                      // update form details to firebase
+                      if (_formKey.currentState!.validate()) {
+                        await DatabaseService(uid: user?.uid).updateUserData(
+                          _currentName ?? userData!.name,
+                          _currentSugars ?? userData!.sugars,
+                          _currentStrength ?? userData!.strength,
+                        );
+                        // ignore: use_build_context_synchronously
+                        Navigator.pop(
+                            context); // automatically close bottom sheet
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.brown[400],

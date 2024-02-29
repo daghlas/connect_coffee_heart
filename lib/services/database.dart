@@ -13,8 +13,8 @@ class DatabaseService {
   Future updateUserData(String sugars, String name, int strength) async {
     // connect_coffee
     return await connectCollection.doc(uid).set({
-      'sugars': sugars,
       'name': name,
+      'sugars': sugars,
       'strength': strength,
     });
   }
