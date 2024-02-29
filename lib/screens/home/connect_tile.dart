@@ -16,6 +16,7 @@ class ConnectTile extends StatelessWidget {
           leading: CircleAvatar(
             radius: 25.0,
             backgroundColor: Colors.brown[connectCoffee.strength],
+            backgroundImage: const AssetImage('assets/coffee_icon.png'),
           ),
           title: Text(connectCoffee.name),
           subtitle: Text('Takes ${connectCoffee.sugars} sugar(s)'),
