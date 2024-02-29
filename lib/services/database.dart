@@ -10,12 +10,12 @@ class DatabaseService {
   final CollectionReference connectCollection =
       FirebaseFirestore.instance.collection('Connects');
 
-  Future updateUserData(String sugars, String name, int strength) async {
+  Future updateUserData(String name, int strength, String sugars) async {
     // connect_coffee
     return await connectCollection.doc(uid).set({
       'name': name,
-      'sugars': sugars,
       'strength': strength,
+      'sugars': sugars,
     });
   }
 

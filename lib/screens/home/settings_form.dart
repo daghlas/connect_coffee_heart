@@ -91,10 +91,9 @@ class _SettingsFormState extends State<SettingsForm> {
                       // update form details to firebase
                       if (_formKey.currentState!.validate()) {
                         await DatabaseService(uid: user?.uid).updateUserData(
-                          _currentName ?? userData!.name,
-                          _currentSugars ?? userData!.sugars,
-                          _currentStrength ?? userData!.strength,
-                        );
+                            _currentName ?? userData!.name,
+                            _currentStrength ?? userData!.strength,
+                            _currentSugars ?? userData!.sugars);
                         // ignore: use_build_context_synchronously
                         Navigator.pop(
                             context); // automatically close bottom sheet
