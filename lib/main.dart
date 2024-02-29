@@ -1,7 +1,7 @@
+import 'package:connect_coffee/connect/my_home.dart';
 import 'package:connect_coffee/firebase_options.dart';
 import 'package:connect_coffee/models/user.dart';
 import 'package:connect_coffee/services/auth.dart';
-import 'package:connect_coffee/screens/wrapper.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -17,14 +17,14 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
+  // This widget is the root of the application.
   @override
   Widget build(BuildContext context) {
     return StreamProvider<FireUser?>.value(
       value: AuthService().user,
       initialData: null,
       child: const MaterialApp(
-        home: Wrapper(),
+        home: MyHome(), // should return Wrapper class
       ),
     );
   }
