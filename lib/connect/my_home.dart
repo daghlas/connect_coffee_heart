@@ -111,7 +111,7 @@ class MyHome extends StatelessWidget {
                 Card(
                   margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                   elevation: 0.0,
-                  color: Colors.brown[100],
+                  color: Colors.brown[50],
                   child: const ListTile(
                     title: Text(
                       'Menu',
@@ -137,7 +137,7 @@ class MyHome extends StatelessWidget {
                 Card(
                   margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                   elevation: 0.0,
-                  color: Colors.green[100],
+                  color: Colors.brown[50],
                   child: const ListTile(
                     title: Text(
                       'Online Shop',
@@ -162,7 +162,7 @@ class MyHome extends StatelessWidget {
                 Card(
                   margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                   elevation: 0.0,
-                  color: Colors.pink[100],
+                  color: Colors.brown[50],
                   child: const ListTile(
                     title: Text(
                       'Cart',
@@ -187,7 +187,7 @@ class MyHome extends StatelessWidget {
                 Card(
                   margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                   elevation: 0.0,
-                  color: Colors.purple[100],
+                  color: Colors.brown[50],
                   child: const ListTile(
                     title: Text(
                       'Blog',
@@ -212,7 +212,7 @@ class MyHome extends StatelessWidget {
                 Card(
                   margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                   elevation: 0.0,
-                  color: Colors.indigo[100],
+                  color: Colors.brown[50],
                   child: const ListTile(
                     title: Text(
                       'Events',
