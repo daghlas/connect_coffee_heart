@@ -106,12 +106,13 @@ class MyHome extends StatelessWidget {
                 ),
               ],
             ),
-            const Column(
+            Column(
               children: [
                 Card(
-                  margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
+                  margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                   elevation: 0.0,
-                  child: ListTile(
+                  color: Colors.brown[100],
+                  child: const ListTile(
                     title: Text(
                       'Menu',
                       style: TextStyle(
@@ -134,9 +135,10 @@ class MyHome extends StatelessWidget {
                   ),
                 ),
                 Card(
-                  margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
+                  margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                   elevation: 0.0,
-                  child: ListTile(
+                  color: Colors.green[100],
+                  child: const ListTile(
                     title: Text(
                       'Online Shop',
                       style: TextStyle(
@@ -158,9 +160,10 @@ class MyHome extends StatelessWidget {
                   ),
                 ),
                 Card(
-                  margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
+                  margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                   elevation: 0.0,
-                  child: ListTile(
+                  color: Colors.pink[100],
+                  child: const ListTile(
                     title: Text(
                       'Cart',
                       style: TextStyle(
@@ -182,9 +185,10 @@ class MyHome extends StatelessWidget {
                   ),
                 ),
                 Card(
-                  margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
+                  margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                   elevation: 0.0,
-                  child: ListTile(
+                  color: Colors.purple[100],
+                  child: const ListTile(
                     title: Text(
                       'Blog',
                       style: TextStyle(
@@ -206,9 +210,10 @@ class MyHome extends StatelessWidget {
                   ),
                 ),
                 Card(
-                  margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
+                  margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
                   elevation: 0.0,
-                  child: ListTile(
+                  color: Colors.indigo[100],
+                  child: const ListTile(
                     title: Text(
                       'Events',
                       style: TextStyle(
