@@ -182,63 +182,39 @@ class MyHome extends StatelessWidget {
             ),
             const SizedBox(height: 20.0),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Column(
-                  children: [
-                    Icon(
-                      Icons.facebook,
-                      size: 30,
-                      color: Colors.blue,
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      'Facebook',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
+                const Padding(
+                  padding: EdgeInsets.only(left: 8.0),
+                  child: Icon(
+                    Icons.facebook,
+                    size: 30,
+                    color: Colors.blue,
+                  ),
                 ),
-                Column(
-                  children: [
-                    Image.asset(
-                      'assets/instagram.png',
-                      width: 30,
-                      height: 30,
-                    ),
-                    const SizedBox(height: 8),
-                    const Text(
-                      'Instagram',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Image.asset(
+                    'assets/instagram.png',
+                    width: 30,
+                    height: 30,
+                  ),
                 ),
-                Column(
-                  children: [
-                    Image.asset(
-                      'assets/twitter_x.png',
-                      width: 30,
-                      height: 30,
-                    ),
-                    const SizedBox(height: 8),
-                    const Text(
-                      'Twitter',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Image.asset(
+                    'assets/twitter_x.png',
+                    width: 27,
+                    height: 27,
+                  ),
                 ),
-                Column(
-                  children: [
-                    Image.asset(
-                      'assets/youtube.png',
-                      width: 30,
-                      height: 30,
-                    ),
-                    const SizedBox(height: 8),
-                    const Text(
-                      'YouTube',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+                  child: Image.asset(
+                    'assets/youtube.png',
+                    width: 27,
+                    height: 27,
+                  ),
                 ),
               ],
             ),
