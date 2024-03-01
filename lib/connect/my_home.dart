@@ -6,11 +6,12 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[100],
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.brown,
         foregroundColor: Colors.white,
         title: const Text('Connect Coffee'),
+        centerTitle: true,
         elevation: 0.0,
         actions: [
           PopupMenuButton<String>(
@@ -70,34 +71,36 @@ class MyHome extends StatelessWidget {
       body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            const Column(
+            Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Center(
-                    child: Text(
-                      'CONNECT WITH PEOPLE',
-                      style: TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold),
+                    child: Image.asset(
+                      'assets/connect.png',
+                      scale: 2.0,
                     ),
                   ),
                 ),
-                SizedBox(height: 10.0),
-                Center(
+                const SizedBox(height: 10.0),
+                const Center(
                   child: Text(
-                    'Make life Better',
-                    style: TextStyle(fontSize: 17.0, color: Colors.black),
+                    'WE BELIEVE IN VALUE OF CONNECTION',
+                    style: TextStyle(
+                        fontSize: 17.0,
+                        color: Colors.black,
+                        letterSpacing: 3,
+                        fontFamily: 'IBMPlexSans'),
                   ),
                 ),
-                SizedBox(height: 10.0),
-                Center(
+                const SizedBox(height: 30.0),
+                const Center(
                   child: Text(
-                    '@Connect Coffee',
+                    'MAKE LIFE BETTER',
                     style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.brown,
+                        fontSize: 18.0,
+                        color: Colors.black,
+                        fontFamily: 'IBMPlexSans',
                         fontWeight: FontWeight.bold),
                   ),
                 ),
