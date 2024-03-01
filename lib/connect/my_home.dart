@@ -166,7 +166,7 @@ class MyHome extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(
-                      'Click to view the items in your cart and proceed with checkouts',
+                      'Click to view the items in your cart and proceed with checkouts.',
                       style: TextStyle(color: Colors.black),
                     ),
                     leading: Padding(
@@ -178,22 +178,70 @@ class MyHome extends StatelessWidget {
                     ),
                   ),
                 ),
+                Card(
+                  margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
+                  elevation: 0.0,
+                  child: ListTile(
+                    title: Text(
+                      'Blog',
+                      style: TextStyle(
+                          color: Colors.black,
+                          letterSpacing: 2,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(
+                      'Click to catch up with our most recent blogs and connect with farmers, customers and people.',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    leading: Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                      child: CircleAvatar(
+                          backgroundColor: Colors.purple,
+                          foregroundColor: Colors.white,
+                          child: Icon(Icons.newspaper)),
+                    ),
+                  ),
+                ),
+                Card(
+                  margin: EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
+                  elevation: 0.0,
+                  child: ListTile(
+                    title: Text(
+                      'Events',
+                      style: TextStyle(
+                          color: Colors.black,
+                          letterSpacing: 2,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    subtitle: Text(
+                      'Click to view the upcoming scheduled events on Connect Coffee calender.',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                    leading: Padding(
+                      padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
+                      child: CircleAvatar(
+                          backgroundColor: Colors.indigo,
+                          foregroundColor: Colors.white,
+                          child: Icon(Icons.movie)),
+                    ),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 20.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 8.0),
-                  child: Icon(
-                    Icons.facebook,
-                    size: 30,
-                    color: Colors.blue,
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: Image.asset(
+                    'assets/facebook_fb.png',
+                    width: 27,
+                    height: 27,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: Image.asset(
                     'assets/instagram.png',
                     width: 30,
@@ -201,7 +249,7 @@ class MyHome extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                  padding: const EdgeInsets.only(left: 10.0),
                   child: Image.asset(
                     'assets/twitter_x.png',
                     width: 27,
@@ -209,7 +257,7 @@ class MyHome extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+                  padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
                   child: Image.asset(
                     'assets/youtube.png',
                     width: 27,
