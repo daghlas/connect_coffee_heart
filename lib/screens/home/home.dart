@@ -1,3 +1,4 @@
+import 'package:connect_coffee/connect/my_home.dart';
 import 'package:connect_coffee/models/connect.dart';
 import 'package:connect_coffee/screens/home/connect_list.dart';
 import 'package:connect_coffee/screens/home/settings_form.dart';
@@ -68,7 +69,25 @@ class Home extends StatelessWidget {
               image: DecorationImage(
                   image: AssetImage('assets/coffee_bg.png'), fit: BoxFit.cover),
             ),
-            child: const ConnectList()),
+            child: Column(
+              children: [
+                const ConnectList(),
+                const SizedBox(height: 20.0),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const MyHome()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black,
+                      foregroundColor: Colors.white,
+                      elevation: 0.0,
+                    ),
+                    child: const Text('Go to Home'))
+              ],
+            )),
       ),
     );
   }
