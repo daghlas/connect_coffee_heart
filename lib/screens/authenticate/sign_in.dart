@@ -30,7 +30,137 @@ class _SignInState extends State<SignIn> {
     return loading
         ? const Loading()
         : Scaffold(
-            backgroundColor: Colors.brown[100],
+            resizeToAvoidBottomInset: false,
+            body: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(begin: Alignment.topCenter, colors: [
+                Colors.brown[500]!,
+                Colors.brown[900]!,
+                Colors.brown[400]!
+              ])),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  const SizedBox(height: 80),
+                  const Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          'Login',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 50.0,
+                              fontFamily: 'IBMPlexSans',
+                              fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 10.0),
+                        Text(
+                          'Welcome Back',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.0,
+                              fontFamily: 'IBMPlexSans',
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20.0),
+                  Expanded(
+                    child: Container(
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(60),
+                              topRight: Radius.circular(60))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(30.0),
+                        child: Column(
+                          children: <Widget>[
+                            const SizedBox(height: 60.0),
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color:
+                                            Color.fromRGBO(151, 54, 12, 0.603),
+                                        blurRadius: 20,
+                                        offset: Offset(0, 10))
+                                  ]),
+                              child: Column(children: <Widget>[
+                                Container(
+                                  padding: const EdgeInsets.all(10.0),
+                                  decoration: BoxDecoration(
+                                      border: Border(
+                                          bottom: BorderSide(
+                                              color: Colors.grey[200]!))),
+                                  child: const TextField(
+                                      decoration: InputDecoration(
+                                          hintText: 'Enter Email',
+                                          hintStyle:
+                                              TextStyle(color: Colors.grey),
+                                          border: InputBorder.none)),
+                                ),
+                                Container(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: const TextField(
+                                      decoration: InputDecoration(
+                                          hintText: 'Enter Password',
+                                          hintStyle:
+                                              TextStyle(color: Colors.grey),
+                                          border: InputBorder.none)),
+                                )
+                              ]),
+                            ),
+                            const SizedBox(height: 80.0),
+                            Container(
+                              height: 50.0,
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 50.0),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50.0),
+                                  color: Colors.brown[600]),
+                              child: const Center(
+                                child: Text(
+                                  'LOGIN',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'IBMPlexSans',
+                                      letterSpacing: 2.0),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 60.0),
+                            const Text(
+                              'Dont have an account?',
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            const SizedBox(height: 40.0),
+                            const Text(
+                              'Forgot Password?',
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            // backgroundColor: Colors.brown[100],
             // appBar: AppBar(
             //   backgroundColor: Colors.brown[400],
             //   foregroundColor: Colors.white,
