@@ -1,5 +1,4 @@
 import 'package:connect_coffee/services/auth.dart';
-import 'package:connect_coffee/shared/constants.dart';
 import 'package:connect_coffee/shared/loading.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -92,36 +91,82 @@ class _SignInState extends State<SignIn> {
                                         blurRadius: 20,
                                         offset: Offset(0, 10))
                                   ]),
-                              child: Column(children: <Widget>[
-                                Container(
-                                  padding: const EdgeInsets.all(10.0),
-                                  decoration: BoxDecoration(
+                              child: Form(
+                                key: _formalKey,
+                                child: Column(children: <Widget>[
+                                  Container(
+                                    padding: const EdgeInsets.all(10.0),
+                                    decoration: BoxDecoration(
                                       border: Border(
-                                          bottom: BorderSide(
-                                              color: Colors.grey[200]!))),
-                                  child: const TextField(
-                                      decoration: InputDecoration(
+                                        bottom: BorderSide(
+                                            color: Colors.grey[200]!),
+                                      ),
+                                    ),
+                                    child: TextFormField(
+                                      decoration: const InputDecoration(
                                           hintText: 'Enter Email',
                                           hintStyle:
                                               TextStyle(color: Colors.grey),
-                                          border: InputBorder.none)),
-                                ),
-                                Container(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: const TextField(
-                                      decoration: InputDecoration(
+                                          border: InputBorder.none),
+                                      validator: (val) =>
+                                          val!.isEmpty ? 'Enter email' : null,
+                                      onChanged: (val) {
+                                        setState(() {
+                                          email = val;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: TextFormField(
+                                      decoration: const InputDecoration(
                                           hintText: 'Enter Password',
                                           hintStyle:
                                               TextStyle(color: Colors.grey),
-                                          border: InputBorder.none)),
-                                )
-                              ]),
+                                          border: InputBorder.none),
+                                      obscureText: true,
+                                      validator: (val) => val!.length < 6
+                                          ? 'Enter password'
+                                          : null,
+                                      onChanged: (val) {
+                                        setState(() {
+                                          email = val;
+                                        });
+                                      },
+                                    ),
+                                  )
+                                ]),
+                              ),
                             ),
-                            const SizedBox(height: 80.0),
+                            const SizedBox(height: 50.0),
+                            Text(
+                              error,
+                              style: const TextStyle(
+                                  color: Colors.red, fontSize: 14.0),
+                            ),
+                            const SizedBox(height: 50.0),
                             GestureDetector(
-                              onTap: () {
+                              onTap: () async {
                                 if (kDebugMode) {
                                   print('LOG IN PRESSED');
+                                }
+                                if (_formalKey.currentState!.validate()) {
+                                  setState(() {
+                                    loading = true;
+                                  });
+                                  dynamic result =
+                                      await _auth.signInWithEmailAndPassword(
+                                          email, password);
+                                  if (result == null) {
+                                    setState(() {
+                                      error =
+                                          'Sign in failed, WRONG CREDENTIALS';
+                                      loading = false;
+                                    });
+                                  }
+                                  print(email);
+                                  print(password);
                                 }
                               },
                               child: Container(
@@ -144,20 +189,35 @@ class _SignInState extends State<SignIn> {
                               ),
                             ),
                             const SizedBox(height: 60.0),
-                            const Text(
-                              'Dont have an account?',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.bold),
+                            GestureDetector(
+                              onTap: () {
+                                if (kDebugMode) {
+                                  print('REGISTER BUTTON CLICKED');
+                                }
+                                widget.toggleView();
+                              },
+                              child: const Text(
+                                'Dont have an account?',
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                             const SizedBox(height: 40.0),
-                            const Text(
-                              'Forgot Password?',
-                              style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 18.0,
-                                  fontWeight: FontWeight.bold),
+                            GestureDetector(
+                              onTap: () {
+                                if (kDebugMode) {
+                                  print('FORGOT PASSWORD BUTTON');
+                                }
+                              },
+                              child: const Text(
+                                'Forgot Password?',
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
                             ),
                           ],
                         ),
@@ -220,7 +280,7 @@ class _SignInState extends State<SignIn> {
             //           });
             //         },
             //       ),
-            //       const SizedBox(height: 40.0),
+            //       const SizedBox(height: 40.0), //////////TACKLED////////////
             //       ElevatedButton(
             //         onPressed: () async {
             //           if (_formalKey.currentState!.validate()) {
