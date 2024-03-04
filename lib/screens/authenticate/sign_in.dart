@@ -118,21 +118,28 @@ class _SignInState extends State<SignIn> {
                               ]),
                             ),
                             const SizedBox(height: 80.0),
-                            Container(
-                              height: 50.0,
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 50.0),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(50.0),
-                                  color: Colors.brown[600]),
-                              child: const Center(
-                                child: Text(
-                                  'LOGIN',
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'IBMPlexSans',
-                                      letterSpacing: 2.0),
+                            GestureDetector(
+                              onTap: () {
+                                if (kDebugMode) {
+                                  print('LOG IN PRESSED');
+                                }
+                              },
+                              child: Container(
+                                height: 50.0,
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 50.0),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50.0),
+                                    color: Colors.brown[600]),
+                                child: const Center(
+                                  child: Text(
+                                    'LOGIN',
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'IBMPlexSans',
+                                        letterSpacing: 2.0),
+                                  ),
                                 ),
                               ),
                             ),
