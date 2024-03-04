@@ -1,4 +1,3 @@
-import 'package:connect_coffee/connect/my_home.dart';
 import 'package:connect_coffee/firebase_options.dart';
 import 'package:connect_coffee/models/user.dart';
 import 'package:connect_coffee/screens/wrapper.dart';
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
       value: AuthService().user,
       initialData: null,
       child: const MaterialApp(
-        home: Wrapper(), // should return Wrapper class
+        home: Wrapper(),
       ),
     );
   }
