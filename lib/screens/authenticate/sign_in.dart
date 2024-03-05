@@ -161,7 +161,7 @@ class _SignInState extends State<SignIn> {
                                   if (result == null) {
                                     setState(() {
                                       error =
-                                          'Sign in failed, WRONG CREDENTIALS';
+                                          'SIGN IN FAILED, WRONG CREDENTIALS';
                                       loading = false;
                                     });
                                   }
