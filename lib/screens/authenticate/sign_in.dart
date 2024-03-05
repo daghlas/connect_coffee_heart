@@ -131,7 +131,7 @@ class _SignInState extends State<SignIn> {
                                           : null,
                                       onChanged: (val) {
                                         setState(() {
-                                          email = val;
+                                          password = val;
                                         });
                                       },
                                     ),
