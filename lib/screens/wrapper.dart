@@ -1,6 +1,6 @@
+import 'package:connect_coffee/connect/my_home.dart';
 import 'package:connect_coffee/models/user.dart';
 import 'package:connect_coffee/screens/authenticate/authenticate.dart';
-import 'package:connect_coffee/screens/home/home.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +18,7 @@ class Wrapper extends StatelessWidget {
     if (user == null) {
       return const Authenticate();
     } else {
-      return Home();
+      return MyHome();
     }
   }
 }

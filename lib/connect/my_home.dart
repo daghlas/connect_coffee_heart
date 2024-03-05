@@ -1,7 +1,12 @@
+import 'package:connect_coffee/screens/home/home.dart';
+import 'package:connect_coffee/services/auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class MyHome extends StatelessWidget {
-  const MyHome({super.key});
+  MyHome({super.key});
+
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +22,20 @@ class MyHome extends StatelessWidget {
           PopupMenuButton<String>(
             color: Colors.white,
             onSelected: (value) {
-              print('Selected: $value');
+              if (kDebugMode) {
+                print('Selected: $value');
+              }
             },
             itemBuilder: (BuildContext context) {
               return [
-                const PopupMenuItem(
+                PopupMenuItem(
+                  onTap: () {
+                    if (kDebugMode) {
+                      print('On Tap: Settings');
+                    }
+                  },
                   value: 'Settings',
-                  child: Row(
+                  child: const Row(
                     children: [
                       Icon(
                         Icons.settings,
@@ -34,9 +46,18 @@ class MyHome extends StatelessWidget {
                     ],
                   ),
                 ),
-                const PopupMenuItem(
+                PopupMenuItem(
+                  onTap: () {
+                    if (kDebugMode) {
+                      print('On Tap: My Account');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Home()),
+                      );
+                    }
+                  },
                   value: 'My Account',
-                  child: Row(
+                  child: const Row(
                     children: [
                       Icon(
                         Icons.person,
@@ -47,9 +68,15 @@ class MyHome extends StatelessWidget {
                     ],
                   ),
                 ),
-                const PopupMenuItem(
+                PopupMenuItem(
+                  onTap: () async {
+                    if (kDebugMode) {
+                      print('On Tap: Logout');
+                    }
+                    await _auth.signOut();
+                  },
                   value: 'Logout',
-                  child: Row(
+                  child: const Row(
                     children: [
                       Icon(
                         Icons.logout,

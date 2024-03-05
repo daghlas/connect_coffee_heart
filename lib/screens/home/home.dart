@@ -1,4 +1,3 @@
-import 'package:connect_coffee/connect/my_home.dart';
 import 'package:connect_coffee/models/connect.dart';
 import 'package:connect_coffee/screens/home/connect_list.dart';
 import 'package:connect_coffee/screens/home/settings_form.dart';
@@ -8,9 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
-  Home({super.key});
-
-  final AuthService _auth = AuthService();
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,32 +30,21 @@ class Home extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.brown[100],
         appBar: AppBar(
-          backgroundColor: Colors.brown[400],
+          backgroundColor: Colors.brown,
           foregroundColor: Colors.white,
           title: const Text('Connect Coffee'),
+          centerTitle: true,
           elevation: 0.0,
           actions: <Widget>[
-            ElevatedButton.icon(
-              onPressed: () async {
-                await _auth.signOut();
-              },
-              icon: const Icon(Icons.person),
-              label: const Text('logout'),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown[400],
-                foregroundColor: Colors.black,
-                elevation: 0.0,
-              ),
-            ),
             ElevatedButton.icon(
               onPressed: () {
                 showSettingsPannel();
               },
               icon: const Icon(Icons.settings),
-              label: const Text('Settings'),
+              label: const Text(''),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.brown[400],
-                foregroundColor: Colors.black,
+                backgroundColor: Colors.brown,
+                foregroundColor: Colors.white,
                 elevation: 0.0,
               ),
             ),
@@ -69,25 +55,7 @@ class Home extends StatelessWidget {
               image: DecorationImage(
                   image: AssetImage('assets/coffee_bg.png'), fit: BoxFit.cover),
             ),
-            child: Column(
-              children: [
-                const ConnectList(),
-                const SizedBox(height: 20.0),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const MyHome()),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black,
-                      foregroundColor: Colors.white,
-                      elevation: 0.0,
-                    ),
-                    child: const Text('Go to Home'))
-              ],
-            )),
+            child: const ConnectList()),
       ),
     );
   }

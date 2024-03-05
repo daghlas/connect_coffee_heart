@@ -199,21 +199,21 @@ class _RegisterState extends State<Register> {
                                     fontWeight: FontWeight.bold),
                               ),
                             ),
-                            const SizedBox(height: 40.0),
-                            GestureDetector(
-                              onTap: () {
-                                if (kDebugMode) {
-                                  print('FORGOT PASS BUTTON');
-                                }
-                              },
-                              child: const Text(
-                                'Forgot Password?',
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontSize: 18.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
+                            // const SizedBox(height: 40.0),
+                            // GestureDetector(
+                            //   onTap: () {
+                            //     if (kDebugMode) {
+                            //       print('FORGOT PASS BUTTON');
+                            //     }
+                            //   },
+                            //   child: const Text(
+                            //     'Forgot Password?',
+                            //     style: TextStyle(
+                            //         color: Colors.grey,
+                            //         fontSize: 18.0,
+                            //         fontWeight: FontWeight.bold),
+                            //   ),
+                            // ),
                           ],
                         ),
                       ),
