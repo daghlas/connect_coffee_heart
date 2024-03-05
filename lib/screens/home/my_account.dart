@@ -5,8 +5,8 @@ import 'package:connect_coffee/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class MyAccount extends StatelessWidget {
+  const MyAccount({super.key});
 
   @override
   Widget build(BuildContext context) {

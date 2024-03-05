@@ -1,4 +1,4 @@
-import 'package:connect_coffee/screens/home/home.dart';
+import 'package:connect_coffee/screens/home/my_account.dart';
 import 'package:connect_coffee/services/auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +52,7 @@ class MyHome extends StatelessWidget {
                       print('On Tap: My Account');
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()),
+                        MaterialPageRoute(builder: (context) => const MyAccount()),
                       );
                     }
                   },
