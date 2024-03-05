@@ -1,7 +1,6 @@
 import 'package:connect_coffee/models/connect.dart';
 import 'package:connect_coffee/screens/home/connect_list.dart';
 import 'package:connect_coffee/screens/home/settings_form.dart';
-import 'package:connect_coffee/services/auth.dart';
 import 'package:connect_coffee/services/database.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
