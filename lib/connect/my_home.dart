@@ -1,6 +1,8 @@
 import 'package:connect_coffee/components/bottom_nav.dart';
+import 'package:connect_coffee/components/drawer.dart';
 import 'package:connect_coffee/screens/home/my_account.dart';
 import 'package:connect_coffee/screens/pages/cart_page.dart';
+import 'package:connect_coffee/screens/pages/home_page.dart';
 import 'package:connect_coffee/screens/pages/menu_page.dart';
 import 'package:connect_coffee/screens/pages/shop_page.dart';
 import 'package:connect_coffee/services/auth.dart';
@@ -27,311 +29,37 @@ class _MyHomeState extends State<MyHome> {
 
   //bottom bar pages
   final List<Widget> _pages = [
-    const MenuPage(),
-    const ShopPage(),
-    const CartPage(),
+    // const HomePage(), // HOME
+    const MenuPage(), // MENU
+    const ShopPage(), // SHOP
+    const CartPage(), // CART
   ];
+
+  // nav drawer
+  final GlobalKey<ScaffoldState> _globalKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _globalKey,
       backgroundColor: Colors.white,
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
-      body: _pages[_selectedIndex],
-
-      //   backgroundColor: Colors.white,
-      //   appBar: AppBar(
-      //     backgroundColor: Colors.brown,
-      //     foregroundColor: Colors.white,
-      //     title: const Text('Connect Coffee'),
-      //     centerTitle: true,
-      //     elevation: 0.0,
-      //     actions: [
-      //       PopupMenuButton<String>(
-      //         color: Colors.white,
-      //         onSelected: (value) {
-      //           if (kDebugMode) {
-      //             print('Selected: $value');
-      //           }
-      //         },
-      //         itemBuilder: (BuildContext context) {
-      //           return [
-      //             PopupMenuItem(
-      //               onTap: () {
-      //                 if (kDebugMode) {
-      //                   print('On Tap: Settings');
-      //                 }
-      //               },
-      //               value: 'Settings',
-      //               child: const Row(
-      //                 children: [
-      //                   Icon(
-      //                     Icons.settings,
-      //                     color: Colors.black,
-      //                   ),
-      //                   SizedBox(width: 8),
-      //                   Text('Settings'),
-      //                 ],
-      //               ),
-      //             ),
-      //             PopupMenuItem(
-      //               onTap: () {
-      //                 if (kDebugMode) {
-      //                   print('On Tap: My Account');
-      //                   Navigator.push(
-      //                     context,
-      //                     MaterialPageRoute(builder: (context) => const MyAccount()),
-      //                   );
-      //                 }
-      //               },
-      //               value: 'My Account',
-      //               child: const Row(
-      //                 children: [
-      //                   Icon(
-      //                     Icons.person,
-      //                     color: Colors.black,
-      //                   ),
-      //                   SizedBox(width: 8),
-      //                   Text('My Account'),
-      //                 ],
-      //               ),
-      //             ),
-      //             PopupMenuItem(
-      //               onTap: () async {
-      //                 if (kDebugMode) {
-      //                   print('On Tap: Logout');
-      //                 }
-      //                 await _auth.signOut();
-      //               },
-      //               value: 'Logout',
-      //               child: const Row(
-      //                 children: [
-      //                   Icon(
-      //                     Icons.logout,
-      //                     color: Colors.red,
-      //                   ),
-      //                   SizedBox(width: 8),
-      //                   Text(
-      //                     'Logout',
-      //                     style: TextStyle(color: Colors.red),
-      //                   ),
-      //                 ],
-      //               ),
-      //             ),
-      //           ];
-      //         },
-      //       ),
-      //     ],
-      //   ),
-      //   body: Column(
-      //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      //       children: <Widget>[
-      //         Column(
-      //           children: [
-      //             Padding(
-      //               padding: const EdgeInsets.all(10.0),
-      //               child: Center(
-      //                 child: Image.asset(
-      //                   'assets/connect.png',
-      //                   scale: 2.0,
-      //                 ),
-      //               ),
-      //             ),
-      //             const SizedBox(height: 10.0),
-      //             const Center(
-      //               child: Text(
-      //                 'WE BELIEVE IN VALUE OF CONNECTION',
-      //                 style: TextStyle(
-      //                     fontSize: 17.0,
-      //                     color: Colors.black,
-      //                     letterSpacing: 3,
-      //                     fontFamily: 'IBMPlexSans'),
-      //               ),
-      //             ),
-      //             const SizedBox(height: 30.0),
-      //             const Center(
-      //               child: Text(
-      //                 'MAKE LIFE BETTER',
-      //                 style: TextStyle(
-      //                     fontSize: 18.0,
-      //                     color: Colors.black,
-      //                     fontFamily: 'IBMPlexSans',
-      //                     fontWeight: FontWeight.bold),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //         Column(
-      //           children: [
-      //             Card(
-      //               margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
-      //               elevation: 0.0,
-      //               color: Colors.brown[50],
-      //               child: const ListTile(
-      //                 title: Text(
-      //                   'Menu',
-      //                   style: TextStyle(
-      //                       color: Colors.black,
-      //                       letterSpacing: 2,
-      //                       fontWeight: FontWeight.bold),
-      //                 ),
-      //                 subtitle: Text(
-      //                   'Click to view our menu offers and the pricing on the various cuisines.',
-      //                   style: TextStyle(color: Colors.black),
-      //                 ),
-      //                 leading: Padding(
-      //                   padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-      //                   child: CircleAvatar(
-      //                     backgroundColor: Colors.brown,
-      //                     foregroundColor: Colors.white,
-      //                     child: Icon(Icons.coffee),
-      //                   ),
-      //                 ),
-      //               ),
-      //             ),
-      //             Card(
-      //               margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
-      //               elevation: 0.0,
-      //               color: Colors.brown[50],
-      //               child: const ListTile(
-      //                 title: Text(
-      //                   'Online Shop',
-      //                   style: TextStyle(
-      //                       color: Colors.black,
-      //                       letterSpacing: 2,
-      //                       fontWeight: FontWeight.bold),
-      //                 ),
-      //                 subtitle: Text(
-      //                   'Go to our shop and make purschases on our variety of products and produce.',
-      //                   style: TextStyle(color: Colors.black),
-      //                 ),
-      //                 leading: Padding(
-      //                   padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-      //                   child: CircleAvatar(
-      //                       backgroundColor: Colors.green,
-      //                       foregroundColor: Colors.white,
-      //                       child: Icon(Icons.shopping_basket)),
-      //                 ),
-      //               ),
-      //             ),
-      //             Card(
-      //               margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
-      //               elevation: 0.0,
-      //               color: Colors.brown[50],
-      //               child: const ListTile(
-      //                 title: Text(
-      //                   'Cart',
-      //                   style: TextStyle(
-      //                       color: Colors.black,
-      //                       letterSpacing: 2,
-      //                       fontWeight: FontWeight.bold),
-      //                 ),
-      //                 subtitle: Text(
-      //                   'Click to view the items in your cart and proceed with checkouts.',
-      //                   style: TextStyle(color: Colors.black),
-      //                 ),
-      //                 leading: Padding(
-      //                   padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-      //                   child: CircleAvatar(
-      //                       backgroundColor: Colors.pink,
-      //                       foregroundColor: Colors.white,
-      //                       child: Icon(Icons.shopping_cart)),
-      //                 ),
-      //               ),
-      //             ),
-      //             Card(
-      //               margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
-      //               elevation: 0.0,
-      //               color: Colors.brown[50],
-      //               child: const ListTile(
-      //                 title: Text(
-      //                   'Blog',
-      //                   style: TextStyle(
-      //                       color: Colors.black,
-      //                       letterSpacing: 2,
-      //                       fontWeight: FontWeight.bold),
-      //                 ),
-      //                 subtitle: Text(
-      //                   'Click to catch up with our most recent blogs and connect with farmers, customers and people.',
-      //                   style: TextStyle(color: Colors.black),
-      //                 ),
-      //                 leading: Padding(
-      //                   padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-      //                   child: CircleAvatar(
-      //                       backgroundColor: Colors.purple,
-      //                       foregroundColor: Colors.white,
-      //                       child: Icon(Icons.newspaper)),
-      //                 ),
-      //               ),
-      //             ),
-      //             Card(
-      //               margin: const EdgeInsets.fromLTRB(8.0, 8.0, 8.0, 0),
-      //               elevation: 0.0,
-      //               color: Colors.brown[50],
-      //               child: const ListTile(
-      //                 title: Text(
-      //                   'Events',
-      //                   style: TextStyle(
-      //                       color: Colors.black,
-      //                       letterSpacing: 2,
-      //                       fontWeight: FontWeight.bold),
-      //                 ),
-      //                 subtitle: Text(
-      //                   'Click to view the upcoming scheduled events on Connect Coffee calender.',
-      //                   style: TextStyle(color: Colors.black),
-      //                 ),
-      //                 leading: Padding(
-      //                   padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0),
-      //                   child: CircleAvatar(
-      //                       backgroundColor: Colors.indigo,
-      //                       foregroundColor: Colors.white,
-      //                       child: Icon(Icons.movie)),
-      //                 ),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //         const SizedBox(height: 20.0),
-      //         Row(
-      //           mainAxisAlignment: MainAxisAlignment.center,
-      //           children: [
-      //             Padding(
-      //               padding: const EdgeInsets.only(left: 10.0),
-      //               child: Image.asset(
-      //                 'assets/facebook_fb.png',
-      //                 width: 27,
-      //                 height: 27,
-      //               ),
-      //             ),
-      //             Padding(
-      //               padding: const EdgeInsets.only(left: 10.0),
-      //               child: Image.asset(
-      //                 'assets/instagram.png',
-      //                 width: 30,
-      //                 height: 30,
-      //               ),
-      //             ),
-      //             Padding(
-      //               padding: const EdgeInsets.only(left: 10.0),
-      //               child: Image.asset(
-      //                 'assets/twitter_x.png',
-      //                 width: 27,
-      //                 height: 27,
-      //               ),
-      //             ),
-      //             Padding(
-      //               padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
-      //               child: Image.asset(
-      //                 'assets/youtube.png',
-      //                 width: 27,
-      //                 height: 27,
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ]),
+      body: Stack(children: [
+        Container(
+          margin: const EdgeInsets.fromLTRB(15.0, 50.0, 0.0, 0.0),
+          child: IconButton(
+            icon: const Icon(Icons.menu),
+            color: Colors.black,
+            onPressed: () {
+              _globalKey.currentState?.openDrawer();
+            },
+          ),
+        ),
+        _pages[_selectedIndex],
+      ]),
+      drawer: const MyDrawer(),
     );
   }
 }
