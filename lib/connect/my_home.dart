@@ -42,7 +42,7 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _globalKey,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[400],
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
