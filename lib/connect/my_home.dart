@@ -42,19 +42,37 @@ class _MyHomeState extends State<MyHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _globalKey,
-      backgroundColor: Colors.grey[400],
+      backgroundColor: Colors.grey[350],
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
       body: Stack(children: [
         Container(
-          margin: const EdgeInsets.fromLTRB(15.0, 50.0, 0.0, 0.0),
-          child: IconButton(
-            icon: const Icon(Icons.menu),
-            color: Colors.black,
-            onPressed: () {
-              _globalKey.currentState?.openDrawer();
-            },
+          margin: const EdgeInsets.fromLTRB(15.0, 50.0, 15.0, 0.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                icon: const Icon(Icons.menu),
+                color: Colors.black,
+                onPressed: () {
+                  _globalKey.currentState?.openDrawer();
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.person),
+                color: Colors.black,
+                onPressed: () {
+                  if (kDebugMode) {
+                    print('CLICKED: My Account Button');
+                  }
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HomePage()),
+                  );
+                },
+              ),
+            ],
           ),
         ),
         _pages[_selectedIndex],

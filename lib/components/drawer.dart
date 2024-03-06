@@ -14,12 +14,28 @@ class MyDrawer extends StatelessWidget {
               color: Colors.brown,
             ),
             child: Center(
-              child: Text(
-                'Drawer Header',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      radius: 25.0,
+                      backgroundColor: Colors.brown,
+                      backgroundImage: AssetImage('assets/coffee_icon.png'),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(top: 10.0),
+                    child: Text(
+                      'Daghlas Kenyatta',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 24,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -54,6 +70,31 @@ class MyDrawer extends StatelessWidget {
               // Add your navigation logic here
               // Navigator.pop(context);
             },
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 10.0),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(1.0),
+              color: Colors.brown[200],
+            ),
+            child: ListTile(
+              leading: const Icon(
+                Icons.logout,
+                color: Colors.red,
+              ),
+              title: const Text(
+                'L0GOUT',
+                style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'IBMPlexSans',
+                    letterSpacing: 2.0),
+              ),
+              onTap: () {
+                // Add your navigation logic here
+                // Navigator.pop(context);
+              },
+            ),
           ),
         ],
       ),

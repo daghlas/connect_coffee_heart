@@ -10,6 +10,16 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('CART'));
+    return const Center(
+      child: Text(
+        'CART',
+        style: TextStyle(
+            fontSize: 20.0,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'IBMPlexSans',
+            letterSpacing: 2.0),
+      ),
+    );
   }
 }
