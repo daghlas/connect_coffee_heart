@@ -1,4 +1,5 @@
 import 'package:connect_coffee/connect/my_home.dart';
+import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/user.dart';
 import 'package:connect_coffee/screens/authenticate/authenticate.dart';
 import 'package:flutter/foundation.dart';
@@ -18,7 +19,10 @@ class Wrapper extends StatelessWidget {
     if (user == null) {
       return const Authenticate();
     } else {
-      return MyHome();
+      return ChangeNotifierProvider(
+        create: (context) => ConnectMenu(),
+        builder: (context, child) => const MyHome(),
+      );
     }
   }
 }

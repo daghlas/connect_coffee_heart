@@ -1,11 +1,9 @@
 import 'package:connect_coffee/components/bottom_nav.dart';
 import 'package:connect_coffee/components/drawer.dart';
-import 'package:connect_coffee/screens/home/my_account.dart';
 import 'package:connect_coffee/screens/pages/cart_page.dart';
 import 'package:connect_coffee/screens/pages/home_page.dart';
 import 'package:connect_coffee/screens/pages/menu_page.dart';
 import 'package:connect_coffee/screens/pages/shop_page.dart';
-import 'package:connect_coffee/services/auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +15,7 @@ class MyHome extends StatefulWidget {
 }
 
 class _MyHomeState extends State<MyHome> {
-  final AuthService _auth = AuthService();
+  // final AuthService _auth = AuthService();
 
   //navigate bottom bar
   int _selectedIndex = 0;
