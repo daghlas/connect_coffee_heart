@@ -6,10 +6,12 @@ import 'package:flutter/material.dart';
 class MenuTile extends StatelessWidget {
   final Menu menu;
   void Function()? onPressed;
+  final Widget icon;
   MenuTile({
     super.key,
     required this.menu,
     required this.onPressed,
+    required this.icon,
   });
 
   @override
@@ -45,7 +47,7 @@ class MenuTile extends StatelessWidget {
         trailing: Padding(
           padding: const EdgeInsets.all(8.0),
           child: IconButton(
-            icon: const Icon(Icons.arrow_forward),
+            icon: icon,
             color: Colors.grey,
             onPressed: onPressed,
           ),

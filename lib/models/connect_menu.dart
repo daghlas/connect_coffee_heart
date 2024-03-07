@@ -57,7 +57,7 @@ class ConnectMenu extends ChangeNotifier {
   }
 
   // remove item from cart
-  void removeItemToCart(Menu menu) {
+  void removeItemFromCart(Menu menu) {
     _userCart.remove(menu);
     notifyListeners();
   }

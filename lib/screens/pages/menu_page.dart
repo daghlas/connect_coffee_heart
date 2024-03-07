@@ -15,6 +15,14 @@ class _MenuPageState extends State<MenuPage> {
   // add item to cart
   void addToCart(Menu menu) {
     Provider.of<ConnectMenu>(context, listen: false).addItemToCart(menu);
+
+    // toast message when user adds item to cart
+    showDialog(
+      context: context,
+      builder: (context) => const AlertDialog(
+        title: Text('added to cart'),
+      ),
+    );
   }
 
   @override
@@ -47,6 +55,7 @@ class _MenuPageState extends State<MenuPage> {
                       // return the tile for the item
                       return MenuTile(
                         menu: menuItem,
+                        icon: const Icon(Icons.add),
                         onPressed: () => addToCart(menuItem),
                       );
                     }),
