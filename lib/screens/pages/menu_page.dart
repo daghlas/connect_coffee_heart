@@ -16,13 +16,13 @@ class _MenuPageState extends State<MenuPage> {
   void addToCart(Menu menu) {
     Provider.of<ConnectMenu>(context, listen: false).addItemToCart(menu);
 
-    // toast message when user adds item to cart
-    showDialog(
-      context: context,
-      builder: (context) => const AlertDialog(
-        title: Text('added to cart'),
-      ),
-    );
+    // // toast message when user adds item to cart
+    // showDialog(
+    //   context: context,
+    //   builder: (context) => const AlertDialog(
+    //     title: Text('added to cart'),
+    //   ),
+    // );
   }
 
   @override

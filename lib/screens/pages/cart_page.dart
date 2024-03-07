@@ -16,13 +16,13 @@ class _CartPageState extends State<CartPage> {
   void removeFromCart(Menu menu) {
     Provider.of<ConnectMenu>(context, listen: false).removeItemFromCart(menu);
 
-    // toast message when user removes item from cart
-    showDialog(
-      context: context,
-      builder: (context) => const AlertDialog(
-        title: Text('removed from cart'),
-      ),
-    );
+    // // toast message when user removes item from cart
+    // showDialog(
+    //   context: context,
+    //   builder: (context) => const AlertDialog(
+    //     title: Text('removed from cart'),
+    //   ),
+    // );
   }
 
   @override
