@@ -15,14 +15,6 @@ class _CartPageState extends State<CartPage> {
   // remove item to cart
   void removeFromCart(Menu menu) {
     Provider.of<ConnectMenu>(context, listen: false).removeItemFromCart(menu);
-
-    // // toast message when user removes item from cart
-    // showDialog(
-    //   context: context,
-    //   builder: (context) => const AlertDialog(
-    //     title: Text('removed from cart'),
-    //   ),
-    // );
   }
 
   @override
@@ -55,7 +47,10 @@ class _CartPageState extends State<CartPage> {
                       // return the tile for the item
                       return MenuTile(
                         menu: menuItem,
-                        onPressed: () => removeFromCart(menuItem),
+                        onPressed: () {
+                          removeFromCart(menuItem);
+                          _showToast(context);
+                        },
                         icon: const Icon(Icons.delete),
                       );
                     }),
@@ -63,6 +58,18 @@ class _CartPageState extends State<CartPage> {
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  // toast message
+  void _showToast(BuildContext context) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: const Text('Removed from cart'),
+        action: SnackBarAction(
+            label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
       ),
     );
   }

@@ -15,14 +15,6 @@ class _MenuPageState extends State<MenuPage> {
   // add item to cart
   void addToCart(Menu menu) {
     Provider.of<ConnectMenu>(context, listen: false).addItemToCart(menu);
-
-    // // toast message when user adds item to cart
-    // showDialog(
-    //   context: context,
-    //   builder: (context) => const AlertDialog(
-    //     title: Text('added to cart'),
-    //   ),
-    // );
   }
 
   @override
@@ -56,7 +48,10 @@ class _MenuPageState extends State<MenuPage> {
                       return MenuTile(
                         menu: menuItem,
                         icon: const Icon(Icons.add),
-                        onPressed: () => addToCart(menuItem),
+                        onPressed: () {
+                          addToCart(menuItem);
+                          _showToast(context);
+                        },
                       );
                     }),
               )
@@ -65,16 +60,17 @@ class _MenuPageState extends State<MenuPage> {
         ),
       ),
     );
-    // const Center(
-    //   child: Text(
-    //     'MENU',
-    //     style: TextStyle(
-    //         fontSize: 20.0,
-    //         color: Colors.black,
-    //         fontWeight: FontWeight.bold,
-    //         fontFamily: 'IBMPlexSans',
-    //         letterSpacing: 2.0),
-    //   ),
-    // );
+  }
+
+// toast message
+  void _showToast(BuildContext context) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: const Text('Added to cart'),
+        action: SnackBarAction(
+            label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
+      ),
+    );
   }
 }
