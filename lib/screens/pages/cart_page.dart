@@ -16,7 +16,7 @@ class _CartPageState extends State<CartPage> {
   void removeFromCart(Menu menu) {
     Provider.of<ConnectMenu>(context, listen: false).removeItemFromCart(menu);
 
-    // toast message when user adds item to cart
+    // toast message when user removes item from cart
     showDialog(
       context: context,
       builder: (context) => const AlertDialog(
@@ -35,7 +35,7 @@ class _CartPageState extends State<CartPage> {
           child: Column(
             children: [
               const Text(
-                'Explore our Menu & order',
+                'Your Cart',
                 style: TextStyle(
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
