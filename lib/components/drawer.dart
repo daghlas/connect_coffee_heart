@@ -39,62 +39,59 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
           ),
-          ListTile(
-            leading: const Icon(Icons.home),
-            title: const Text('Home'),
-            onTap: () {
-              // Add your navigation logic here
-              // Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.newspaper),
-            title: const Text('Blog'),
-            onTap: () {
-              // Add your navigation logic here
-              // Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.movie),
-            title: const Text('Events'),
-            onTap: () {
-              // Add your navigation logic here
-              // Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.call),
-            title: const Text('Contact Us'),
-            onTap: () {
-              // Add your navigation logic here
-              // Navigator.pop(context);
-            },
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 10.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(1.0),
-              color: Colors.brown[200],
-            ),
-            child: ListTile(
-              leading: const Icon(
-                Icons.logout,
-                color: Colors.red,
+          Column(
+            children: [
+              ListTile(
+                leading: const Icon(Icons.home),
+                title: const Text('Home'),
+                onTap: () {
+                  // Add your navigation logic here
+                  // Navigator.pop(context);
+                },
               ),
-              title: const Text(
-                'L0GOUT',
-                style: TextStyle(
+              ListTile(
+                leading: const Icon(Icons.newspaper),
+                title: const Text('Blog'),
+                onTap: () {
+                  // Add your navigation logic here
+                  // Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.movie),
+                title: const Text('Events'),
+                onTap: () {
+                  // Add your navigation logic here
+                  // Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.call),
+                title: const Text('Contact Us'),
+                onTap: () {
+                  // Add your navigation logic here
+                  // Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.logout,
+                  color: Colors.red,
+                ),
+                title: const Text(
+                  'L0GOUT',
+                  style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'IBMPlexSans',
-                    letterSpacing: 2.0),
+                  ),
+                ),
+                onTap: () {
+                  // Add your navigation logic here
+                  // Navigator.pop(context);
+                },
               ),
-              onTap: () {
-                // Add your navigation logic here
-                // Navigator.pop(context);
-              },
-            ),
+            ],
           ),
         ],
       ),
