@@ -99,53 +99,6 @@ class _MenuPageState extends State<MenuItemPage> {
               ),
             ),
           ]),
-
-          // body: Container(
-          //   color: Colors.grey[350],
-          //   child: Padding(
-          //     padding: const EdgeInsets.fromLTRB(13.0, 100.0, 13.0, 0.0),
-          //     child: Column(
-          //       children: [
-          //         Text(
-          //           widget.name,
-          //           style: const TextStyle(
-          //               fontSize: 25.0,
-          //               fontWeight: FontWeight.bold,
-          //               fontFamily: 'IBMPlexSans'),
-          //         ),
-          //         const SizedBox(height: 10.0),
-          //         const Text(
-          //           'add items to cart and order',
-          //           style: TextStyle(
-          //               fontWeight: FontWeight.bold,
-          //               fontFamily: 'IBMPlexSans'),
-          //         ),
-          //         const SizedBox(height: 30.0),
-
-          //         //list of menu items
-          //         Expanded(
-          //           child: ListView.builder(
-          //               itemCount: value.menuList.length,
-          //               itemBuilder: (context, index) {
-          //                 // get individual menu item
-          //                 MenuItems menuItems =
-          //                     value.espressoCoffeeList[index];
-
-          //                 // return the tile for the item
-          //                 return MenuItemTile(
-          //                   menuItems: menuItems,
-          //                   icon: const Icon(Icons.add),
-          //                   onPressed: () {
-          //                     //addToCart(menuItem);
-          //                     _showToast(context);
-          //                   },
-          //                 );
-          //               }),
-          //         )
-          //       ],
-          //     ),
-          //   ),
-          // ),
         ),
       ),
     );
