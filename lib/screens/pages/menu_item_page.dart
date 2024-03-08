@@ -13,49 +13,57 @@ class MenuItemPage extends StatefulWidget {
 
 class _MenuPageState extends State<MenuItemPage> {
   // add item to cart
-  void addToCart(Menu menu) {
-    Provider.of<ConnectMenu>(context, listen: false).addItemToCart(menu);
-  }
+  // void addToCart(Menu menu) {
+  //   Provider.of<ConnectMenu>(context, listen: false).addItemToCart(menu);
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ConnectMenu>(
-      builder: (BuildContext context, ConnectMenu value, Widget? child) =>
-          SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(13.0, 100.0, 13.0, 0.0),
-          child: Column(
-            children: [
-              const Text(
-                'Explore our Menu & order',
-                style: TextStyle(
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'IBMPlexSans'),
+    return ChangeNotifierProvider<ConnectMenu>(
+      create: (BuildContext context) => ConnectMenu(),
+      child: Consumer<ConnectMenu>(
+        builder: (BuildContext context, ConnectMenu value, Widget? child) =>
+            SafeArea(
+          child: Scaffold(
+            body: Container(
+              color: Colors.grey[350],
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(13.0, 100.0, 13.0, 0.0),
+                child: Column(
+                  children: [
+                    const Text(
+                      'ESPRESSO COFFEE',
+                      style: TextStyle(
+                          fontSize: 25.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'IBMPlexSans'),
+                    ),
+
+                    const SizedBox(height: 50.0),
+
+                    //list of menu items
+                    Expanded(
+                      child: ListView.builder(
+                          itemCount: value.menuList.length,
+                          itemBuilder: (context, index) {
+                            // get individual menu item
+                            Menu menuItem = value.menuList[index];
+
+                            // return the tile for the item
+                            return MenuTile(
+                              menu: menuItem,
+                              icon: const Icon(Icons.add),
+                              onPressed: () {
+                                //addToCart(menuItem);
+                                _showToast(context);
+                              },
+                            );
+                          }),
+                    )
+                  ],
+                ),
               ),
-
-              const SizedBox(height: 50.0),
-
-              //list of menu items
-              Expanded(
-                child: ListView.builder(
-                    itemCount: value.menuList.length,
-                    itemBuilder: (context, index) {
-                      // get individual menu item
-                      Menu menuItem = value.menuList[index];
-
-                      // return the tile for the item
-                      return MenuTile(
-                        menu: menuItem,
-                        icon: const Icon(Icons.add),
-                        onPressed: () {
-                          addToCart(menuItem);
-                          _showToast(context);
-                        },
-                      );
-                    }),
-              )
-            ],
+            ),
           ),
         ),
       ),

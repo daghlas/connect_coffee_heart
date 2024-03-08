@@ -41,6 +41,44 @@ class ConnectMenu extends ChangeNotifier {
     //     imagePath: 'assets/coffee_icon.png'),
   ];
 
+  final List<MenuItems> _espressoCoffeeList = [
+    // Espresso / Espresso Macchiato
+    MenuItems(
+        itemName: 'Espresso / Espresso Macchiato',
+        itemPrice: 'HOT 250',
+        itemImage: 'assets/coffee_icon.png'),
+
+    // Café Latte / Cappuccino
+    MenuItems(
+        itemName: 'Café Latte / Cappuccino',
+        itemPrice: 'HOT 320 | ICED 350',
+        itemImage: 'assets/coffee_icon.png'),
+
+    // Café Mocha
+    MenuItems(
+        itemName: 'Café Mocha',
+        itemPrice: 'HOT 370 | ICED 400',
+        itemImage: 'assets/coffee_icon.png'),
+
+    // Caramel Macchiato
+    MenuItems(
+        itemName: 'Caramel Macchiato',
+        itemPrice: 'HOT 400 | ICED 450',
+        itemImage: 'assets/coffee_icon.png'),
+
+    // // specially brewed tea
+    // Menu(
+    //     name: 'SPECIALLY BREWED TEA',
+    //     description: 'The perfect cup of joy',
+    //     imagePath: 'assets/coffee_icon.png'),
+
+    // // pastry
+    // Menu(
+    //     name: 'PASTRY',
+    //     description: 'Fresh, delicious and healthy',
+    //     imagePath: 'assets/coffee_icon.png'),
+  ];
+
   // user cart
   final List<Menu> _userCart = [];
 
