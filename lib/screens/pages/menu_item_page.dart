@@ -40,7 +40,7 @@ class _MenuPageState extends State<MenuItemPage> {
                     ),
                     const SizedBox(height: 10.0),
                     const Text(
-                      'add items to cart to order',
+                      'add items to cart and order',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontFamily: 'IBMPlexSans'),
@@ -82,7 +82,15 @@ class _MenuPageState extends State<MenuItemPage> {
     final scaffold = ScaffoldMessenger.of(context);
     scaffold.showSnackBar(
       const SnackBar(
-        content: Text('Added to cart'),
+        content: Center(
+            child: Text(
+          'ADDED TO CART',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'IBMPlexSans',
+          ),
+        )),
+        backgroundColor: Colors.brown,
         // action: SnackBarAction(
         //     label: 'View Cart', onPressed: scaffold.hideCurrentSnackBar),
       ),
