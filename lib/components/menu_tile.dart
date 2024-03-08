@@ -20,10 +20,10 @@ class MenuTile extends StatelessWidget {
       margin: const EdgeInsets.fromLTRB(13.0, 10.0, 13.0, 0),
       child: ListTile(
         contentPadding: const EdgeInsets.all(20.0),
-        leading: const CircleAvatar(
+        leading: CircleAvatar(
           radius: 30.0,
           backgroundColor: Colors.brown,
-          backgroundImage: AssetImage('assets/coffee_icon.png'),
+          backgroundImage: AssetImage(menu.imagePath),
         ),
         title: Padding(
           padding: const EdgeInsets.only(left: 8.0),

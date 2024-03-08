@@ -13,9 +13,11 @@ class Menu {
 class MenuItems {
   late String itemName;
   late String itemPrice;
+  late String itemImage;
 
   MenuItems({
     required this.itemName,
     required this.itemPrice,
+    required this.itemImage,
   });
 }
