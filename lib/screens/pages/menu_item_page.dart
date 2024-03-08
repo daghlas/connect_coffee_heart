@@ -1,4 +1,4 @@
-import 'package:connect_coffee/components/menu_tile.dart';
+import 'package:connect_coffee/components/menu_item_tile.dart';
 import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/menu.dart';
 import 'package:flutter/material.dart';
@@ -38,8 +38,14 @@ class _MenuPageState extends State<MenuItemPage> {
                           fontWeight: FontWeight.bold,
                           fontFamily: 'IBMPlexSans'),
                     ),
-
-                    const SizedBox(height: 50.0),
+                    const SizedBox(height: 10.0),
+                    const Text(
+                      'add items to cart to order',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'IBMPlexSans'),
+                    ),
+                    const SizedBox(height: 30.0),
 
                     //list of menu items
                     Expanded(
@@ -47,11 +53,12 @@ class _MenuPageState extends State<MenuItemPage> {
                           itemCount: value.menuList.length,
                           itemBuilder: (context, index) {
                             // get individual menu item
-                            Menu menuItem = value.menuList[index];
+                            MenuItems menuItems =
+                                value.espressoCoffeeList[index];
 
                             // return the tile for the item
-                            return MenuTile(
-                              menu: menuItem,
+                            return MenuItemTile(
+                              menuItems: menuItems,
                               icon: const Icon(Icons.add),
                               onPressed: () {
                                 //addToCart(menuItem);

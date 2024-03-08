@@ -41,6 +41,7 @@ class ConnectMenu extends ChangeNotifier {
     //     imagePath: 'assets/coffee_icon.png'),
   ];
 
+  // Espresso Coffee MenuItems
   final List<MenuItems> _espressoCoffeeList = [
     // Espresso / Espresso Macchiato
     MenuItems(
@@ -84,6 +85,9 @@ class ConnectMenu extends ChangeNotifier {
 
   // get coffee list
   List<Menu> get menuList => _menuList;
+
+  // get menuItems list
+  List<MenuItems> get espressoCoffeeList => _espressoCoffeeList;
 
   // get user cart
   List<Menu> get userCart => _userCart;
