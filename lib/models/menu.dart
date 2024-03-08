@@ -9,3 +9,13 @@ class Menu {
     required this.imagePath,
   });
 }
+
+class MenuItems {
+  late String itemName;
+  late String itemPrice;
+
+  MenuItems({
+    required this.itemName,
+    required this.itemPrice,
+  });
+}

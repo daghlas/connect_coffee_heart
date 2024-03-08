@@ -1,13 +1,13 @@
 import 'package:connect_coffee/models/menu.dart';
 import 'package:flutter/material.dart';
 
-class MenuTile extends StatelessWidget {
-  final Menu menu;
+class MenuItemTile extends StatelessWidget {
+  final MenuItems menuItems;
   void Function()? onPressed;
   final Widget icon;
-  MenuTile({
+  MenuItemTile({
     super.key,
-    required this.menu,
+    required this.menuItems,
     required this.onPressed,
     required this.icon,
   });
@@ -20,15 +20,10 @@ class MenuTile extends StatelessWidget {
       margin: const EdgeInsets.fromLTRB(13.0, 10.0, 13.0, 0),
       child: ListTile(
         contentPadding: const EdgeInsets.all(20.0),
-        leading: const CircleAvatar(
-          radius: 30.0,
-          backgroundColor: Colors.brown,
-          backgroundImage: AssetImage('assets/coffee_icon.png'),
-        ),
         title: Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: Text(
-            menu.name,
+            menuItems.itemName,
             style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontFamily: 'IBMPlexSans',
@@ -38,7 +33,7 @@ class MenuTile extends StatelessWidget {
         subtitle: Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: Text(
-            menu.description,
+            menuItems.itemPrice,
             style: const TextStyle(color: Colors.grey),
           ),
         ),
