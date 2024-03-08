@@ -42,6 +42,9 @@ class _MenuPageState extends State<MenuPage> {
                         // get individual menu item
                         Menu menuItem = value.menuList[index];
 
+                        // Retrieve menu name data to pass to next context
+                        String name = value.menuList[index].name;
+
                         // return the tile for the item
                         return MenuTile(
                           menu: menuItem,
@@ -52,7 +55,7 @@ class _MenuPageState extends State<MenuPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const MenuItemPage(),
+                                builder: (context) => MenuItemPage(name: name),
                               ),
                             );
                           },

@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class MenuItemPage extends StatefulWidget {
-  const MenuItemPage({super.key});
+  final String name;
+  const MenuItemPage({super.key, required this.name});
 
   @override
   State<MenuItemPage> createState() => _MenuPageState();
@@ -31,9 +32,9 @@ class _MenuPageState extends State<MenuItemPage> {
                 padding: const EdgeInsets.fromLTRB(13.0, 100.0, 13.0, 0.0),
                 child: Column(
                   children: [
-                    const Text(
-                      'ESPRESSO COFFEE',
-                      style: TextStyle(
+                    Text(
+                      widget.name,
+                      style: const TextStyle(
                           fontSize: 25.0,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'IBMPlexSans'),
