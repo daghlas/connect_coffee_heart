@@ -14,7 +14,8 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   // remove item to cart
   void removeFromCart(MenuItems menuItems) {
-    Provider.of<ConnectMenu>(context, listen: false).removeItemFromCart(menuItems);
+    Provider.of<ConnectMenu>(context, listen: false)
+        .removeItemFromCart(menuItems);
   }
 
   @override
@@ -33,9 +34,9 @@ class _CartPageState extends State<CartPage> {
                     fontWeight: FontWeight.bold,
                     fontFamily: 'IBMPlexSans'),
               ),
-    
+
               const SizedBox(height: 50.0),
-    
+
               //list of menu items
               Expanded(
                 child: ListView.builder(
@@ -43,7 +44,7 @@ class _CartPageState extends State<CartPage> {
                     itemBuilder: (context, index) {
                       // get individual menu item
                       MenuItems menuItem = value.userCart[index];
-    
+
                       // return the tile for the item
                       return MenuItemTile(
                         menuItems: menuItem,
@@ -75,7 +76,7 @@ class _CartPageState extends State<CartPage> {
             fontFamily: 'IBMPlexSans',
           ),
         )),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.black,
         // action: SnackBarAction(
         //     label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
       ),
