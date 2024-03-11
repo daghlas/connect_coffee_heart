@@ -15,9 +15,9 @@ class MenuItemPage extends StatefulWidget {
 
 class _MenuPageState extends State<MenuItemPage> {
   // add item to cart
-  // void addToCart(Menu menu) {
-  //   Provider.of<ConnectMenu>(context, listen: false).addItemToCart(menu);
-  // }
+  void addToCart(MenuItems menuItems) {
+    Provider.of<ConnectMenu>(context, listen: false).addItemToCart(menuItems);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,7 @@ class _MenuPageState extends State<MenuItemPage> {
                                   menuItems: menuItems,
                                   icon: const Icon(Icons.add),
                                   onPressed: () {
-                                    //addToCart(menuItem);
+                                    addToCart(menuItems);
                                     _showToast(context);
                                   },
                                 );

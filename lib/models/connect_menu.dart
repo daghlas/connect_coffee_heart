@@ -81,7 +81,7 @@ class ConnectMenu extends ChangeNotifier {
   ];
 
   // user cart
-  final List<Menu> _userCart = [];
+  final List<MenuItems> _userCart = [];
 
   // get coffee list
   List<Menu> get menuList => _menuList;
@@ -90,17 +90,17 @@ class ConnectMenu extends ChangeNotifier {
   List<MenuItems> get espressoCoffeeList => _espressoCoffeeList;
 
   // get user cart
-  List<Menu> get userCart => _userCart;
+  List<MenuItems> get userCart => _userCart;
 
   // add item to cart
-  void addItemToCart(Menu menu) {
-    _userCart.add(menu);
+  void addItemToCart(MenuItems menuItems) {
+    _userCart.add(menuItems);
     notifyListeners();
   }
 
   // remove item from cart
-  void removeItemFromCart(Menu menu) {
-    _userCart.remove(menu);
+  void removeItemFromCart(MenuItems menuItems) {
+    _userCart.remove(menuItems);
     notifyListeners();
   }
 }

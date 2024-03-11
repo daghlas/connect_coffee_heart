@@ -1,4 +1,5 @@
 import 'package:connect_coffee/firebase_options.dart';
+import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/user.dart';
 import 'package:connect_coffee/screens/wrapper.dart';
 import 'package:connect_coffee/services/auth.dart';
@@ -11,7 +12,13 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+
+  runApp(
+    ChangeNotifierProvider<ConnectMenu>(
+      create: (BuildContext context) => ConnectMenu(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
