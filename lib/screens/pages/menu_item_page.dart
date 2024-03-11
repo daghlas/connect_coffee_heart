@@ -1,6 +1,7 @@
 import 'package:connect_coffee/components/menu_item_tile.dart';
 import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/menu.dart';
+import 'package:connect_coffee/screens/pages/cart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -41,13 +42,22 @@ class _MenuPageState extends State<MenuItemPage> {
                           Navigator.pop(context, true);
                         },
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: CircleAvatar(
-                          radius: 25.0,
-                          backgroundColor: Colors.brown,
-                          foregroundColor: Colors.white,
-                          child: Icon(Icons.shopping_cart),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CartPage()),
+                          );
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            radius: 25.0,
+                            backgroundColor: Colors.brown,
+                            foregroundColor: Colors.white,
+                            child: Icon(Icons.shopping_cart),
+                          ),
                         ),
                       ),
                     ],
@@ -69,7 +79,7 @@ class _MenuPageState extends State<MenuItemPage> {
                               fontWeight: FontWeight.bold,
                               fontFamily: 'IBMPlexSans'),
                         ),
-                        const SizedBox(height: 25.0),
+                        const SizedBox(height: 10.0),
 
                         //list of menu items
                         Expanded(

@@ -19,43 +19,46 @@ class _CartPageState extends State<CartPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ConnectMenu>(
-      builder: (BuildContext context, ConnectMenu value, Widget? child) =>
-          SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(13.0, 100.0, 13.0, 0.0),
-          child: Column(
-            children: [
-              const Text(
-                'Your Cart',
-                style: TextStyle(
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'IBMPlexSans'),
-              ),
+    return ChangeNotifierProvider<ConnectMenu>(
+      create: (BuildContext context) => ConnectMenu(),
+      child: Consumer<ConnectMenu>(
+        builder: (BuildContext context, ConnectMenu value, Widget? child) =>
+            SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(13.0, 100.0, 13.0, 0.0),
+            child: Column(
+              children: [
+                const Text(
+                  'Your Cart',
+                  style: TextStyle(
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'IBMPlexSans'),
+                ),
 
-              const SizedBox(height: 50.0),
+                const SizedBox(height: 50.0),
 
-              //list of menu items
-              Expanded(
-                child: ListView.builder(
-                    itemCount: value.userCart.length,
-                    itemBuilder: (context, index) {
-                      // get individual menu item
-                      Menu menuItem = value.userCart[index];
+                //list of menu items
+                Expanded(
+                  child: ListView.builder(
+                      itemCount: value.userCart.length,
+                      itemBuilder: (context, index) {
+                        // get individual menu item
+                        Menu menuItem = value.userCart[index];
 
-                      // return the tile for the item
-                      return MenuTile(
-                        menu: menuItem,
-                        onPressed: () {
-                          removeFromCart(menuItem);
-                          _showToast(context);
-                        },
-                        icon: const Icon(Icons.delete),
-                      );
-                    }),
-              )
-            ],
+                        // return the tile for the item
+                        return MenuTile(
+                          menu: menuItem,
+                          onPressed: () {
+                            removeFromCart(menuItem);
+                            _showToast(context);
+                          },
+                          icon: const Icon(Icons.delete),
+                        );
+                      }),
+                )
+              ],
+            ),
           ),
         ),
       ),
