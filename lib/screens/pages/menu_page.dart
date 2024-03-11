@@ -48,8 +48,6 @@ class _MenuPageState extends State<MenuPage> {
                         menu: menuItem,
                         icon: const Icon(Icons.arrow_forward_ios),
                         onPressed: () {
-                          // addToCart(menuItem);
-                          // _showToast(context);
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -63,18 +61,6 @@ class _MenuPageState extends State<MenuPage> {
             ],
           ),
         ),
-      ),
-    );
-  }
-
-// toast message
-  void _showToast(BuildContext context) {
-    final scaffold = ScaffoldMessenger.of(context);
-    scaffold.showSnackBar(
-      const SnackBar(
-        content: Text('Added to cart'),
-        // action: SnackBarAction(
-        //     label: 'View Cart', onPressed: scaffold.hideCurrentSnackBar),
       ),
     );
   }
