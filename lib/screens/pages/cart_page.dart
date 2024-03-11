@@ -67,7 +67,15 @@ class _CartPageState extends State<CartPage> {
     final scaffold = ScaffoldMessenger.of(context);
     scaffold.showSnackBar(
       const SnackBar(
-        content: Text('Removed from cart'),
+        content: Center(
+            child: Text(
+          'REMOVED FROM CART',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'IBMPlexSans',
+          ),
+        )),
+        backgroundColor: Colors.brown,
         // action: SnackBarAction(
         //     label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
       ),
