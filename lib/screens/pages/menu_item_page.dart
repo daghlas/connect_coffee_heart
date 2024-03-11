@@ -1,7 +1,6 @@
 import 'package:connect_coffee/components/menu_item_tile.dart';
 import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/menu.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -39,7 +38,7 @@ class _MenuPageState extends State<MenuItemPage> {
                         icon: const Icon(Icons.arrow_back_ios),
                         color: Colors.black,
                         onPressed: () {
-                          // _globalKey.currentState?.openDrawer();
+                          Navigator.pop(context, true);
                         },
                       ),
                       const Padding(
@@ -70,7 +69,7 @@ class _MenuPageState extends State<MenuItemPage> {
                               fontWeight: FontWeight.bold,
                               fontFamily: 'IBMPlexSans'),
                         ),
-                        const SizedBox(height: 30.0),
+                        const SizedBox(height: 25.0),
 
                         //list of menu items
                         Expanded(
