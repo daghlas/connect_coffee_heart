@@ -80,6 +80,8 @@ class _HomePageState extends State<HomePage> {
                       print('On Tap: Logout');
                     }
                     await _auth.signOut();
+                    // ignore: use_build_context_synchronously
+                    Navigator.pop(context);
                   },
                   value: 'Logout',
                   child: const Row(

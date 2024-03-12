@@ -27,7 +27,7 @@ class _CartPageState extends State<CartPage> {
         body: Stack(
           children: [
             Container(
-              margin: const EdgeInsets.fromLTRB(15.0, 100.0, 15.0, 0.0),
+              margin: const EdgeInsets.fromLTRB(15.0, 100.0, 15.0, 20.0),
               child: Column(
                 children: [
                   const Text(

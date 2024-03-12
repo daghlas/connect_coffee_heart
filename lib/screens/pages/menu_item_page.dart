@@ -27,7 +27,7 @@ class _MenuPageState extends State<MenuItemPage> {
         backgroundColor: Colors.grey[350],
         body: Stack(children: [
           Container(
-            margin: const EdgeInsets.fromLTRB(15.0, 50.0, 15.0, 0.0),
+            margin: const EdgeInsets.fromLTRB(15.0, 50.0, 15.0, 20.0),
             child: Column(
               children: [
                 Row(
