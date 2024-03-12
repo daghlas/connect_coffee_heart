@@ -22,42 +22,47 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Consumer<ConnectMenu>(
       builder: (BuildContext context, ConnectMenu value, Widget? child) =>
-          SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(13.0, 100.0, 13.0, 0.0),
-          child: Column(
-            children: [
-              const Text(
-                'Your Cart',
-                style: TextStyle(
-                    fontSize: 25.0,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'IBMPlexSans'),
+          Scaffold(
+        backgroundColor: Colors.grey[350],
+        body: Stack(
+          children: [
+            Container(
+              margin: const EdgeInsets.fromLTRB(15.0, 100.0, 15.0, 0.0),
+              child: Column(
+                children: [
+                  const Text(
+                    'Your Cart',
+                    style: TextStyle(
+                        fontSize: 25.0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'IBMPlexSans'),
+                  ),
+
+                  const SizedBox(height: 20.0),
+
+                  //list of menu items
+                  Expanded(
+                    child: ListView.builder(
+                        itemCount: value.userCart.length,
+                        itemBuilder: (context, index) {
+                          // get individual menu item
+                          MenuItems menuItem = value.userCart[index];
+
+                          // return the tile for the item
+                          return MenuItemTile(
+                            menuItems: menuItem,
+                            onPressed: () {
+                              removeFromCart(menuItem);
+                              _showToast(context);
+                            },
+                            icon: const Icon(Icons.delete),
+                          );
+                        }),
+                  )
+                ],
               ),
-
-              const SizedBox(height: 50.0),
-
-              //list of menu items
-              Expanded(
-                child: ListView.builder(
-                    itemCount: value.userCart.length,
-                    itemBuilder: (context, index) {
-                      // get individual menu item
-                      MenuItems menuItem = value.userCart[index];
-
-                      // return the tile for the item
-                      return MenuItemTile(
-                        menuItems: menuItem,
-                        onPressed: () {
-                          removeFromCart(menuItem);
-                          _showToast(context);
-                        },
-                        icon: const Icon(Icons.delete),
-                      );
-                    }),
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
