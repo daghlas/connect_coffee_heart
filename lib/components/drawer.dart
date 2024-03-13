@@ -95,11 +95,11 @@ class _MyDrawerState extends State<MyDrawer> {
                   color: Colors.red,
                 ),
                 title: const Text(
-                  'L0GOUT',
+                  'Logout',
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'IBMPlexSans',
+                    // fontFamily: 'IBMPlexSans',
                   ),
                 ),
                 onTap: () async {
