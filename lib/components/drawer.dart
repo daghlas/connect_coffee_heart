@@ -74,7 +74,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const ConnectEvents()));
+                          builder: (context) => const EventsPage()));
                 },
               ),
               ListTile(
