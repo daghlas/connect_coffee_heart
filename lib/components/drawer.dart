@@ -1,7 +1,6 @@
 import 'package:connect_coffee/screens/pages/drawer/blog.dart';
 import 'package:connect_coffee/screens/pages/drawer/contact_us.dart';
 import 'package:connect_coffee/screens/pages/drawer/events.dart';
-import 'package:connect_coffee/screens/pages/menu_page.dart';
 import 'package:connect_coffee/services/auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -57,10 +56,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 leading: const Icon(Icons.home),
                 title: const Text('Home'),
                 onTap: () {
-                  // Navigator.push(
-                  //     context,
-                  //     MaterialPageRoute(
-                  //         builder: (context) => const MenuPage()));
+                  Navigator.pop(context);
                 },
               ),
               ListTile(

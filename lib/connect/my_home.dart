@@ -2,7 +2,6 @@ import 'package:connect_coffee/components/bottom_nav.dart';
 import 'package:connect_coffee/components/drawer.dart';
 import 'package:connect_coffee/screens/home/my_account.dart';
 import 'package:connect_coffee/screens/pages/cart_page.dart';
-import 'package:connect_coffee/screens/pages/home_page.dart';
 import 'package:connect_coffee/screens/pages/menu_page.dart';
 import 'package:connect_coffee/screens/pages/shop_page.dart';
 import 'package:flutter/foundation.dart';
