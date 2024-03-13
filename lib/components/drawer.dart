@@ -1,5 +1,7 @@
+import 'package:connect_coffee/screens/pages/drawer/blog.dart';
 import 'package:connect_coffee/screens/pages/drawer/contact_us.dart';
 import 'package:connect_coffee/screens/pages/drawer/events.dart';
+import 'package:connect_coffee/screens/pages/menu_page.dart';
 import 'package:connect_coffee/services/auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -55,16 +57,20 @@ class _MyDrawerState extends State<MyDrawer> {
                 leading: const Icon(Icons.home),
                 title: const Text('Home'),
                 onTap: () {
-                  // Add your navigation logic here
-                  // Navigator.pop(context);
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) => const MenuPage()));
                 },
               ),
               ListTile(
                 leading: const Icon(Icons.newspaper),
                 title: const Text('Blog'),
                 onTap: () {
-                  // Add your navigation logic here
-                  // Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const BlogPage()));
                 },
               ),
               ListTile(
@@ -81,12 +87,10 @@ class _MyDrawerState extends State<MyDrawer> {
                 leading: const Icon(Icons.call),
                 title: const Text('Contact Us'),
                 onTap: () {
-                  // Add your navigation logic here
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const ContactUs()));
-                  // Navigator.pop(context);
                 },
               ),
               ListTile(
