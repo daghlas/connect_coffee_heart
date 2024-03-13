@@ -110,6 +110,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   if (kDebugMode) {
                     print('On Tap: Logout');
                   }
+                  _showToast(context);
                   await _auth.signOut();
                   // ignore: use_build_context_synchronously
                   Navigator.pop(context);
@@ -118,6 +119,26 @@ class _MyDrawerState extends State<MyDrawer> {
             ],
           ),
         ],
+      ),
+    );
+  }
+
+  // toast message
+  void _showToast(BuildContext context) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      const SnackBar(
+        content: Center(
+            child: Text(
+          'Successfully logged Out',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'IBMPlexSans',
+          ),
+        )),
+        backgroundColor: Colors.brown,
+        // action: SnackBarAction(
+        //     label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
       ),
     );
   }
