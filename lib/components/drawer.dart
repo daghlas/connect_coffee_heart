@@ -75,6 +75,7 @@ class MyDrawer extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) => const ContactUs()));
+                  // Navigator.pop(context);
                 },
               ),
               ListTile(
