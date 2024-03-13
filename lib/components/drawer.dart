@@ -1,9 +1,17 @@
 import 'package:connect_coffee/screens/pages/drawer/contact_us.dart';
+import 'package:connect_coffee/services/auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class MyDrawer extends StatelessWidget {
+class MyDrawer extends StatefulWidget {
   const MyDrawer({super.key});
 
+  @override
+  State<MyDrawer> createState() => _MyDrawerState();
+}
+
+class _MyDrawerState extends State<MyDrawer> {
+  final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -91,9 +99,13 @@ class MyDrawer extends StatelessWidget {
                     fontFamily: 'IBMPlexSans',
                   ),
                 ),
-                onTap: () {
-                  // Add your navigation logic here
-                  // Navigator.pop(context);
+                onTap: () async {
+                  if (kDebugMode) {
+                    print('On Tap: Logout');
+                  }
+                  await _auth.signOut();
+                  // ignore: use_build_context_synchronously
+                  Navigator.pop(context);
                 },
               ),
             ],
