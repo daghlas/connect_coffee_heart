@@ -10,10 +10,10 @@ class MenuItemPage extends StatefulWidget {
   const MenuItemPage({super.key, required this.name});
 
   @override
-  State<MenuItemPage> createState() => _MenuPageState();
+  State<MenuItemPage> createState() => _MenuItemPageState();
 }
 
-class _MenuPageState extends State<MenuItemPage> {
+class _MenuItemPageState extends State<MenuItemPage> {
   // add item to cart
   void addToCart(MenuItems menuItems) {
     Provider.of<ConnectMenu>(context, listen: false).addItemToCart(menuItems);
