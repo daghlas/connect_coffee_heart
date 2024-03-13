@@ -31,8 +31,8 @@ class MyAccount extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.brown,
           foregroundColor: Colors.white,
-          title: const Text('Connect Coffee'),
-          centerTitle: true,
+          title: const Text('Accounts'),
+          // centerTitle: true,
           elevation: 0.0,
           actions: <Widget>[
             ElevatedButton.icon(

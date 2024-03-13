@@ -1,5 +1,6 @@
 import 'package:connect_coffee/components/bottom_nav.dart';
 import 'package:connect_coffee/components/drawer.dart';
+import 'package:connect_coffee/screens/home/my_account.dart';
 import 'package:connect_coffee/screens/pages/cart_page.dart';
 import 'package:connect_coffee/screens/pages/home_page.dart';
 import 'package:connect_coffee/screens/pages/menu_page.dart';
@@ -66,7 +67,7 @@ class _MyHomeState extends State<MyHome> {
                   }
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const HomePage()),
+                    MaterialPageRoute(builder: (context) => const MyAccount()),
                   );
                 },
               ),
