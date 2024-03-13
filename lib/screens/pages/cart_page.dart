@@ -22,9 +22,8 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Consumer<ConnectMenu>(
       builder: (BuildContext context, ConnectMenu value, Widget? child) =>
-          Scaffold(
-        backgroundColor: Colors.grey[350],
-        body: Stack(
+          SafeArea(
+        child: Stack(
           children: [
             Container(
               margin: const EdgeInsets.fromLTRB(15.0, 100.0, 15.0, 20.0),

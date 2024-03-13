@@ -1,3 +1,4 @@
+import 'package:connect_coffee/screens/pages/drawer/contact_us.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -70,7 +71,10 @@ class MyDrawer extends StatelessWidget {
                 title: const Text('Contact Us'),
                 onTap: () {
                   // Add your navigation logic here
-                  // Navigator.pop(context);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ContactUs()));
                 },
               ),
               ListTile(
