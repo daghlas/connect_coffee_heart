@@ -63,8 +63,10 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           Expanded(
             child: ListView(
+              shrinkWrap: true,
               padding: EdgeInsets.zero,
               children: <Widget>[
+                const SizedBox(height: 10.0),
                 ListTile(
                   leading: const Icon(
                     Icons.home,
@@ -78,6 +80,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     Navigator.pop(context);
                   },
                 ),
+                const SizedBox(height: 10.0),
                 ListTile(
                   leading: const Icon(
                     Icons.newspaper,
@@ -94,6 +97,7 @@ class _MyDrawerState extends State<MyDrawer> {
                             builder: (context) => const BlogPage()));
                   },
                 ),
+                const SizedBox(height: 10.0),
                 ListTile(
                   leading: const Icon(
                     Icons.movie,
@@ -110,6 +114,7 @@ class _MyDrawerState extends State<MyDrawer> {
                             builder: (context) => const EventsPage()));
                   },
                 ),
+                const SizedBox(height: 10.0),
                 ListTile(
                   leading: const Icon(
                     Icons.call,
@@ -133,7 +138,7 @@ class _MyDrawerState extends State<MyDrawer> {
           const Spacer(),
           // Everything from here down is bottom aligned in the drawer
           Padding(
-            padding: const EdgeInsets.only(bottom: 20.0),
+            padding: const EdgeInsets.only(bottom: 40.0),
             child: ListTile(
               leading: const Icon(
                 Icons.logout,
