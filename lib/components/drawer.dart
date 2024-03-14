@@ -17,47 +17,48 @@ class _MyDrawerState extends State<MyDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.brown,
+      backgroundColor: Colors.white,
       child: Column(
         children: <Widget>[
-          const DrawerHeader(
-            decoration: BoxDecoration(
-                // color: Colors.brown,
-                ),
-            child: Center(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                // mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    radius: 30.0,
-                    backgroundColor: Colors.brown,
-                    backgroundImage: AssetImage('assets/coffee_icon.png'),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 10.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Daghlas Kenyatta',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0),
-                        ),
-                        Text(
-                          'daghlaskaire58@gmail.com',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 13,
-                          ),
-                        ),
-                      ],
+          Container(
+            color: Colors.brown,
+            child: const Padding(
+              padding: EdgeInsets.fromLTRB(20.0, 140.0, 20.0, 40.0),
+              child: Center(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: 30.0,
+                      backgroundColor: Colors.brown,
+                      backgroundImage: AssetImage('assets/coffee_icon.png'),
                     ),
-                  ),
-                ],
+                    Padding(
+                      padding: EdgeInsets.only(left: 10.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'Daghlas Kenyatta',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18.0),
+                          ),
+                          Text(
+                            'daghlaskaire58@gmail.com',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -70,12 +71,9 @@ class _MyDrawerState extends State<MyDrawer> {
                 ListTile(
                   leading: const Icon(
                     Icons.home,
-                    color: Colors.white,
+                    color: Colors.grey,
                   ),
-                  title: const Text(
-                    'Home',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  title: const Text('Home'),
                   onTap: () {
                     Navigator.pop(context);
                   },
@@ -84,12 +82,9 @@ class _MyDrawerState extends State<MyDrawer> {
                 ListTile(
                   leading: const Icon(
                     Icons.newspaper,
-                    color: Colors.white,
+                    color: Colors.grey,
                   ),
-                  title: const Text(
-                    'Blog',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  title: const Text('Blog'),
                   onTap: () {
                     Navigator.push(
                         context,
@@ -101,12 +96,9 @@ class _MyDrawerState extends State<MyDrawer> {
                 ListTile(
                   leading: const Icon(
                     Icons.movie,
-                    color: Colors.white,
+                    color: Colors.grey,
                   ),
-                  title: const Text(
-                    'Events',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  title: const Text('Events'),
                   onTap: () {
                     Navigator.push(
                         context,
@@ -118,12 +110,9 @@ class _MyDrawerState extends State<MyDrawer> {
                 ListTile(
                   leading: const Icon(
                     Icons.call,
-                    color: Colors.white,
+                    color: Colors.grey,
                   ),
-                  title: const Text(
-                    'Contact Us',
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  title: const Text('Contact Us'),
                   onTap: () {
                     Navigator.push(
                         context,
@@ -149,7 +138,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 'Logout',
                 style: TextStyle(
                   fontSize: 20.0,
-                  color: Colors.white,
+                  color: Colors.red,
                   fontWeight: FontWeight.bold,
                   // fontFamily: 'IBMPlexSans',
                 ),
