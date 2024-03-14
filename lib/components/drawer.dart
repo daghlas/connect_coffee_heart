@@ -18,8 +18,7 @@ class _MyDrawerState extends State<MyDrawer> {
   Widget build(BuildContext context) {
     return Drawer(
       backgroundColor: Colors.brown,
-      child: ListView(
-        padding: EdgeInsets.zero,
+      child: Column(
         children: <Widget>[
           const DrawerHeader(
             decoration: BoxDecoration(
@@ -62,95 +61,104 @@ class _MyDrawerState extends State<MyDrawer> {
               ),
             ),
           ),
-          Column(
-            children: [
-              ListTile(
-                leading: const Icon(
-                  Icons.home,
-                  color: Colors.white,
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                ListTile(
+                  leading: const Icon(
+                    Icons.home,
+                    color: Colors.white,
+                  ),
+                  title: const Text(
+                    'Home',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
                 ),
-                title: const Text(
-                  'Home',
-                  style: TextStyle(color: Colors.white),
+                ListTile(
+                  leading: const Icon(
+                    Icons.newspaper,
+                    color: Colors.white,
+                  ),
+                  title: const Text(
+                    'Blog',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const BlogPage()));
+                  },
                 ),
-                onTap: () {
-                  Navigator.pop(context);
-                },
-              ),
-              ListTile(
-                leading: const Icon(
-                  Icons.newspaper,
-                  color: Colors.white,
+                ListTile(
+                  leading: const Icon(
+                    Icons.movie,
+                    color: Colors.white,
+                  ),
+                  title: const Text(
+                    'Events',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const EventsPage()));
+                  },
                 ),
-                title: const Text(
-                  'Blog',
-                  style: TextStyle(color: Colors.white),
+                ListTile(
+                  leading: const Icon(
+                    Icons.call,
+                    color: Colors.white,
+                  ),
+                  title: const Text(
+                    'Contact Us',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ContactUs()));
+                  },
                 ),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const BlogPage()));
-                },
-              ),
-              ListTile(
-                leading: const Icon(
-                  Icons.movie,
-                  color: Colors.white,
-                ),
-                title: const Text(
-                  'Events',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const EventsPage()));
-                },
-              ),
-              ListTile(
-                leading: const Icon(
-                  Icons.call,
-                  color: Colors.white,
-                ),
-                title: const Text(
-                  'Contact Us',
-                  style: TextStyle(color: Colors.white),
-                ),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ContactUs()));
-                },
-              ),
-            ],
+              ],
+            ),
           ),
-          ListTile(
-            leading: const Icon(
-              Icons.logout,
-              color: Colors.red,
-              size: 32.0,
-            ),
-            title: const Text(
-              'Logout',
-              style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                // fontFamily: 'IBMPlexSans',
+          // This will fill up any free-space
+          const Spacer(),
+          // Everything from here down is bottom aligned in the drawer
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20.0),
+            child: ListTile(
+              leading: const Icon(
+                Icons.logout,
+                color: Colors.red,
+                size: 32.0,
               ),
+              title: const Text(
+                'Logout',
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  // fontFamily: 'IBMPlexSans',
+                ),
+              ),
+              onTap: () async {
+                if (kDebugMode) {
+                  print('On Tap: Logout');
+                }
+                _showToast(context);
+                await _auth.signOut();
+                // ignore: use_build_context_synchronously
+                Navigator.pop(context);
+              },
             ),
-            onTap: () async {
-              if (kDebugMode) {
-                print('On Tap: Logout');
-              }
-              _showToast(context);
-              await _auth.signOut();
-              // ignore: use_build_context_synchronously
-              Navigator.pop(context);
-            },
           ),
         ],
       ),
