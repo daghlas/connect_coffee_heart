@@ -21,140 +21,136 @@ class _MyDrawerState extends State<MyDrawer> {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          Column(
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(
-                    // color: Colors.brown,
-                    ),
-                child: Center(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    // mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      CircleAvatar(
-                        radius: 30.0,
-                        backgroundColor: Colors.brown,
-                        backgroundImage: AssetImage('assets/coffee_icon.png'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 10.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Daghlas Kenyatta',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18.0),
-                            ),
-                            Text(
-                              'daghlaskaire58@gmail.com',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 13,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+          const DrawerHeader(
+            decoration: BoxDecoration(
+                // color: Colors.brown,
                 ),
-              ),
-              Column(
+            child: Center(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ListTile(
-                    leading: const Icon(
-                      Icons.home,
-                      color: Colors.white,
-                    ),
-                    title: const Text(
-                      'Home',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
+                  CircleAvatar(
+                    radius: 30.0,
+                    backgroundColor: Colors.brown,
+                    backgroundImage: AssetImage('assets/coffee_icon.png'),
                   ),
-                  ListTile(
-                    leading: const Icon(
-                      Icons.newspaper,
-                      color: Colors.white,
+                  Padding(
+                    padding: EdgeInsets.only(left: 10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Daghlas Kenyatta',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18.0),
+                        ),
+                        Text(
+                          'daghlaskaire58@gmail.com',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 13,
+                          ),
+                        ),
+                      ],
                     ),
-                    title: const Text(
-                      'Blog',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const BlogPage()));
-                    },
-                  ),
-                  ListTile(
-                    leading: const Icon(
-                      Icons.movie,
-                      color: Colors.white,
-                    ),
-                    title: const Text(
-                      'Events',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const EventsPage()));
-                    },
-                  ),
-                  ListTile(
-                    leading: const Icon(
-                      Icons.call,
-                      color: Colors.white,
-                    ),
-                    title: const Text(
-                      'Contact Us',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ContactUs()));
-                    },
                   ),
                 ],
               ),
+            ),
+          ),
+          Column(
+            children: [
               ListTile(
                 leading: const Icon(
-                  Icons.logout,
-                  color: Colors.red,
-                  size: 32.0,
+                  Icons.home,
+                  color: Colors.white,
                 ),
                 title: const Text(
-                  'Logout',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    // fontFamily: 'IBMPlexSans',
-                  ),
+                  'Home',
+                  style: TextStyle(color: Colors.white),
                 ),
-                onTap: () async {
-                  if (kDebugMode) {
-                    print('On Tap: Logout');
-                  }
-                  _showToast(context);
-                  await _auth.signOut();
-                  // ignore: use_build_context_synchronously
+                onTap: () {
                   Navigator.pop(context);
                 },
               ),
+              ListTile(
+                leading: const Icon(
+                  Icons.newspaper,
+                  color: Colors.white,
+                ),
+                title: const Text(
+                  'Blog',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const BlogPage()));
+                },
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.movie,
+                  color: Colors.white,
+                ),
+                title: const Text(
+                  'Events',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EventsPage()));
+                },
+              ),
+              ListTile(
+                leading: const Icon(
+                  Icons.call,
+                  color: Colors.white,
+                ),
+                title: const Text(
+                  'Contact Us',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ContactUs()));
+                },
+              ),
             ],
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.logout,
+              color: Colors.red,
+              size: 32.0,
+            ),
+            title: const Text(
+              'Logout',
+              style: TextStyle(
+                fontSize: 20.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                // fontFamily: 'IBMPlexSans',
+              ),
+            ),
+            onTap: () async {
+              if (kDebugMode) {
+                print('On Tap: Logout');
+              }
+              _showToast(context);
+              await _auth.signOut();
+              // ignore: use_build_context_synchronously
+              Navigator.pop(context);
+            },
           ),
         ],
       ),
