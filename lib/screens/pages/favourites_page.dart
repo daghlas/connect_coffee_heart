@@ -10,15 +10,34 @@ class FavouritesPage extends StatefulWidget {
 class _FavouritesPageState extends State<FavouritesPage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'FAVOURITES',
-        style: TextStyle(
-            fontSize: 20.0,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-            fontFamily: 'IBMPlexSans',
-            letterSpacing: 2.0),
+    return SafeArea(
+      child: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.fromLTRB(13.0, 80.0, 13.0, 0.0),
+            child: Text(
+              'Favourites',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'IBMPlexSans'),
+            ),
+          ),
+
+          const SizedBox(height: 50.0),
+
+          //list of menu items
+          Expanded(
+            child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(40)),
+              ),
+
+              // CONTENT GOES HERE
+            ),
+          )
+        ],
       ),
     );
   }

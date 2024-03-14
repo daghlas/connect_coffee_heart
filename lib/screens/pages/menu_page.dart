@@ -18,22 +18,28 @@ class _MenuPageState extends State<MenuPage> {
     return Consumer<ConnectMenu>(
       builder: (BuildContext context, ConnectMenu value, Widget? child) =>
           SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(13.0, 100.0, 13.0, 0.0),
-          child: Column(
-            children: [
-              const Text(
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.fromLTRB(13.0, 80.0, 13.0, 0.0),
+              child: Text(
                 'Explore our Menu & order',
                 style: TextStyle(
-                    fontSize: 25.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'IBMPlexSans'),
               ),
+            ),
 
-              const SizedBox(height: 50.0),
+            const SizedBox(height: 50.0),
 
-              //list of menu items
-              Expanded(
+            //list of menu items
+            Expanded(
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(40)),
+                ),
                 child: ListView.builder(
                     itemCount: value.menuList.length,
                     itemBuilder: (context, index) {
@@ -57,11 +63,12 @@ class _MenuPageState extends State<MenuPage> {
                         },
                       );
                     }),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
+    
     );
   }
 }
