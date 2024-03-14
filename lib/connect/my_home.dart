@@ -3,7 +3,7 @@ import 'package:connect_coffee/components/drawer.dart';
 import 'package:connect_coffee/screens/home/my_account.dart';
 import 'package:connect_coffee/screens/pages/cart_page.dart';
 import 'package:connect_coffee/screens/pages/menu_page.dart';
-import 'package:connect_coffee/screens/pages/shop_page.dart';
+import 'package:connect_coffee/screens/pages/favourites_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +29,7 @@ class _MyHomeState extends State<MyHome> {
   final List<Widget> _pages = [
     // const HomePage(), // HOME
     const MenuPage(), // MENU
-    const ShopPage(), // SHOP
+    const FavouritesPage(), // SHOP
     const CartPage(), // CART
   ];
 
