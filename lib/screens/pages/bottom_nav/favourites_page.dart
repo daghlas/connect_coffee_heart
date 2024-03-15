@@ -38,6 +38,27 @@ class _FavouritesPageState extends State<FavouritesPage> {
               ),
 
               // CONTENT GOES HERE
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(20.0, 30.0, 0, 5.0),
+                    child: Text(
+                      'Favourites',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  ListView.builder(
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        // code goes here
+                      }),
+                ],
+              ),
             ),
           )
         ],
