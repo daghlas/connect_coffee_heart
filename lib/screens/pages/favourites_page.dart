@@ -18,6 +18,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
             child: Text(
               'Favourites',
               style: TextStyle(
+                  color: Colors.white,
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'IBMPlexSans'),

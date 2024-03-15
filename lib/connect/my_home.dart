@@ -52,14 +52,14 @@ class _MyHomeState extends State<MyHome> {
             children: [
               IconButton(
                 icon: const Icon(Icons.menu),
-                color: Colors.black,
+                color: Colors.white,
                 onPressed: () {
                   _globalKey.currentState?.openDrawer();
                 },
               ),
               IconButton(
                 icon: const Icon(Icons.person),
-                color: Colors.black,
+                color: Colors.white,
                 onPressed: () {
                   if (kDebugMode) {
                     print('CLICKED: My Account Button');

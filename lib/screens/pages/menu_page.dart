@@ -25,6 +25,7 @@ class _MenuPageState extends State<MenuPage> {
               child: Text(
                 'Explore our Menu & order',
                 style: TextStyle(
+                    color: Colors.white,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'IBMPlexSans'),
@@ -68,7 +69,6 @@ class _MenuPageState extends State<MenuPage> {
           ],
         ),
       ),
-    
     );
   }
 }

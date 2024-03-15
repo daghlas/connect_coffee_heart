@@ -30,6 +30,7 @@ class _CartPageState extends State<CartPage> {
               child: Text(
                 'Cart',
                 style: TextStyle(
+                  color: Colors.white,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'IBMPlexSans'),
