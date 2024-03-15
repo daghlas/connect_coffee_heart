@@ -50,22 +50,39 @@ class _CartPageState extends State<CartPage> {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0),
-                  child: ListView.builder(
-                      itemCount: value.userCart.length,
-                      itemBuilder: (context, index) {
-                        // get individual menu item
-                        MenuItems menuItem = value.userCart[index];
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.fromLTRB(20.0, 30.0, 0, 5.0),
+                        child: Text(
+                          'Cart',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: value.userCart.length,
+                          itemBuilder: (context, index) {
+                            // get individual menu item
+                            MenuItems menuItem = value.userCart[index];
 
-                        // return the tile for the item
-                        return MenuItemTile(
-                          menuItems: menuItem,
-                          onPressed: () {
-                            removeFromCart(menuItem);
-                            _showToast(context);
-                          },
-                          icon: const Icon(Icons.delete),
-                        );
-                      }),
+                            // return the tile for the item
+                            return MenuItemTile(
+                              menuItems: menuItem,
+                              onPressed: () {
+                                removeFromCart(menuItem);
+                                _showToast(context);
+                              },
+                              icon: const Icon(Icons.delete),
+                            );
+                          }),
+                    ],
+                  ),
                 ),
               ),
             )
