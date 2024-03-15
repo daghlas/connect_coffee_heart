@@ -94,7 +94,20 @@ class _MenuItemPageState extends State<MenuItemPage> {
                               // return the tile for the item
                               return MenuItemTile(
                                 menuItems: menuItems,
-                                icon: const Icon(Icons.add),
+                                icon: Container(
+                                  decoration: const BoxDecoration(
+                                    color: Colors.brown,
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(6.0),
+                                        bottomRight: Radius.circular(6.0),
+                                        topRight: Radius.circular(6.0),
+                                        bottomLeft: Radius.circular(6.0)),
+                                  ),
+                                  child: const Icon(
+                                    Icons.add,
+                                    color: Colors.white,
+                                  ),
+                                ),
                                 onPressed: () {
                                   addToCart(menuItems);
                                   _showToast(context);

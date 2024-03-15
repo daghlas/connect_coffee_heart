@@ -49,7 +49,7 @@ class _CartPageState extends State<CartPage> {
                       bottomRight: Radius.circular(34.0)),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0.0, 5.0, 0.0, 5.0),
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
                   child: ListView.builder(
                       itemCount: value.userCart.length,
                       itemBuilder: (context, index) {
