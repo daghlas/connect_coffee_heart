@@ -1,9 +1,9 @@
 import 'package:connect_coffee/components/bottom_nav.dart';
 import 'package:connect_coffee/components/drawer.dart';
 import 'package:connect_coffee/screens/home/my_account.dart';
-import 'package:connect_coffee/screens/pages/cart_page.dart';
-import 'package:connect_coffee/screens/pages/menu_page.dart';
-import 'package:connect_coffee/screens/pages/favourites_page.dart';
+import 'package:connect_coffee/screens/pages/bottom_nav/cart_page.dart';
+import 'package:connect_coffee/screens/pages/bottom_nav/menu_page.dart';
+import 'package:connect_coffee/screens/pages/bottom_nav/favourites_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 

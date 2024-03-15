@@ -40,8 +40,8 @@ class _MenuPageState extends State<MenuPage> {
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(40),
-                      bottomRight: Radius.circular(40.0)),
+                      topLeft: Radius.circular(34),
+                      bottomRight: Radius.circular(34.0)),
                 ),
                 child: ListView.builder(
                     itemCount: value.menuList.length,
