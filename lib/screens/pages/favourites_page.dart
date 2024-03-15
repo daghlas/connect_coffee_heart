@@ -32,7 +32,9 @@ class _FavouritesPageState extends State<FavouritesPage> {
             child: Container(
               decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(topLeft: Radius.circular(40)),
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    bottomRight: Radius.circular(40.0)),
               ),
 
               // CONTENT GOES HERE

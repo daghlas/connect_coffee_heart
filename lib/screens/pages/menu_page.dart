@@ -39,7 +39,9 @@ class _MenuPageState extends State<MenuPage> {
               child: Container(
                 decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(40)),
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(40),
+                      bottomRight: Radius.circular(40.0)),
                 ),
                 child: ListView.builder(
                     itemCount: value.menuList.length,

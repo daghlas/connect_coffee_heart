@@ -27,18 +27,21 @@ class _MenuItemPageState extends State<MenuItemPage> {
         backgroundColor: Colors.grey[350],
         body: Stack(children: [
           Container(
-            margin: const EdgeInsets.fromLTRB(15.0, 50.0, 15.0, 20.0),
+            margin: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 20.0),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    IconButton(
-                      icon: const Icon(Icons.arrow_back_ios),
-                      color: Colors.black,
-                      onPressed: () {
-                        Navigator.pop(context, true);
-                      },
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+                      child: IconButton(
+                        icon: const Icon(Icons.arrow_back_ios),
+                        color: Colors.black,
+                        onPressed: () {
+                          Navigator.pop(context, true);
+                        },
+                      ),
                     ),
                     GestureDetector(
                       onTap: () {
@@ -49,7 +52,7 @@ class _MenuItemPageState extends State<MenuItemPage> {
                         );
                       },
                       child: const Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
                         child: CircleAvatar(
                           radius: 25.0,
                           backgroundColor: Colors.brown,

@@ -15,10 +15,11 @@ class MenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white,
-      margin: const EdgeInsets.fromLTRB(13.0, 10.0, 13.0, 0),
+      color: Colors.grey[100],
+      elevation: 0.0,
+      margin: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 0),
       child: ListTile(
-        contentPadding: const EdgeInsets.all(20.0),
+        contentPadding: const EdgeInsets.all(10.0),
         leading: CircleAvatar(
           radius: 30.0,
           backgroundColor: Colors.brown,
@@ -29,6 +30,8 @@ class MenuTile extends StatelessWidget {
           child: Text(
             menu.name,
             style: const TextStyle(
+                fontSize: 13.0,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontFamily: 'IBMPlexSans',
                 letterSpacing: 1.0),
