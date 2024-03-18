@@ -15,23 +15,27 @@ class _ContactUsState extends State<ContactUs> {
       appBar: AppBar(
         backgroundColor: Colors.brown,
         foregroundColor: Colors.white,
-        title: const Text('Contact Us'),
+        // title: const Text('Contact Us'),
+        // automaticallyImplyLeading: false,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Center(
+          Center(
             child: Padding(
-              padding: EdgeInsets.only(top: 70.0),
-              child: Text(
-                'HEADER IMAGE',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'IBMPlexSans',
-                ),
-              ),
+              padding: const EdgeInsets.fromLTRB(80.0, 20.0, 80.0, 0),
+              child: Container(
+                  decoration: const BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(13),
+                          topRight: Radius.circular(13),
+                          bottomLeft: Radius.circular(13),
+                          bottomRight: Radius.circular(13))),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Image.asset('assets/connect.png'),
+                  )),
             ),
           ),
           Expanded(
@@ -231,13 +235,13 @@ class _ContactUsState extends State<ContactUs> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.asset('assets/facebook_fb.png',
-                              height: 27, width: 27),
-                          const SizedBox(width: 20),
-                          Image.asset('assets/instagram.png',
                               height: 30, width: 30),
                           const SizedBox(width: 20),
+                          Image.asset('assets/instagram.png',
+                              height: 33, width: 33),
+                          const SizedBox(width: 20),
                           Image.asset('assets/twitter_x.png',
-                              height: 27, width: 27),
+                              height: 30, width: 30),
                           // const SizedBox(width: 10),
                           // Image.asset('assets/youtube.png',
                           //     height: 25, width: 25),
