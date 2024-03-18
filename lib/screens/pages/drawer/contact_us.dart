@@ -39,125 +39,128 @@ class _ContactUsState extends State<ContactUs> {
               margin: const EdgeInsets.only(top: 100.0),
               decoration: const BoxDecoration(color: Colors.white),
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(40.0, 0, 40.0, 40.0),
+                padding: const EdgeInsets.fromLTRB(25.0, 0, 25.0, 40.0),
                 child: Wrap(
                   //wraps content
                   children: [
                     Center(
-                      child: Card(
-                        color: Colors.grey[100],
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              const Padding(
-                                padding: EdgeInsets.all(10.0),
-                                child: Center(
-                                  child: Text(
-                                    'GET IN TOUCH',
-                                    style: TextStyle(
-                                      fontSize: 20.0,
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'IBMPlexSans',
+                      child: Container(
+                        transform: Matrix4.translationValues(0.0, -50.0, 0.0),
+                        child: Card(
+                          color: Colors.grey[100],
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.all(10.0),
+                                  child: Center(
+                                    child: Text(
+                                      'GET IN TOUCH',
+                                      style: TextStyle(
+                                        fontSize: 20.0,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'IBMPlexSans',
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              const SizedBox(height: 10),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(
-                                    Icons.location_on,
-                                    color: Colors.grey,
-                                    size: 18,
-                                  ),
-                                  Text(
-                                    'locations & working hrs',
-                                    style: TextStyle(
-                                      color: Colors.brown[900],
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'IBMPlexSans',
+                                const SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(
+                                      Icons.location_on,
+                                      color: Colors.grey,
+                                      size: 18,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 10),
-                              const Text(
-                                'Riverside Address - 8:00am to 8:00pm',
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'IBMPlexSans',
-                                ),
-                              ),
-                              const SizedBox(height: 10),
-                              const Divider(),
-                              const SizedBox(height: 10),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(
-                                    Icons.phone,
-                                    color: Colors.grey,
-                                    size: 18,
-                                  ),
-                                  Text(
-                                    ' Phone',
-                                    style: TextStyle(
-                                      color: Colors.brown[900],
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'IBMPlexSans',
+                                    Text(
+                                      'locations & working hrs',
+                                      style: TextStyle(
+                                        color: Colors.brown[900],
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'IBMPlexSans',
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 10),
-                              const Text(
-                                'Riverside Address: +254 708 790 480',
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'IBMPlexSans',
+                                  ],
                                 ),
-                              ),
-                              const SizedBox(height: 10),
-                              const Divider(),
-                              const SizedBox(height: 10),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  const Icon(
-                                    Icons.email,
-                                    color: Colors.grey,
-                                    size: 18,
+                                const SizedBox(height: 10),
+                                const Text(
+                                  'Riverside Address - 8:00am to 8:00pm',
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'IBMPlexSans',
                                   ),
-                                  Text(
-                                    ' Email',
-                                    style: TextStyle(
-                                      color: Colors.brown[900],
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'IBMPlexSans',
+                                ),
+                                const SizedBox(height: 10),
+                                const Divider(),
+                                const SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(
+                                      Icons.phone,
+                                      color: Colors.grey,
+                                      size: 18,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 10),
-                              const Text(
-                                'marketing@connectcoffee.net',
-                                style: TextStyle(
-                                  fontSize: 15.0,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'IBMPlexSans',
+                                    Text(
+                                      ' Phone',
+                                      style: TextStyle(
+                                        color: Colors.brown[900],
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'IBMPlexSans',
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              const SizedBox(height: 20),
-                            ],
+                                const SizedBox(height: 10),
+                                const Text(
+                                  'Riverside Address: +254 708 790 480',
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'IBMPlexSans',
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                const Divider(),
+                                const SizedBox(height: 10),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(
+                                      Icons.email,
+                                      color: Colors.grey,
+                                      size: 18,
+                                    ),
+                                    Text(
+                                      ' Email',
+                                      style: TextStyle(
+                                        color: Colors.brown[900],
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'IBMPlexSans',
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 10),
+                                const Text(
+                                  'marketing@connectcoffee.net',
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'IBMPlexSans',
+                                  ),
+                                ),
+                                const SizedBox(height: 20),
+                              ],
+                            ),
                           ),
                         ),
                       ),
