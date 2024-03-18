@@ -88,7 +88,7 @@ class _ContactUsState extends State<ContactUs> {
                                 ),
                                 const SizedBox(height: 10),
                                 const Text(
-                                  'Hurlinganm Address - 8:00am to 8:00pm',
+                                  'Hurlingham Address - 8:00am to 7:00pm',
                                   style: TextStyle(
                                     fontSize: 15.0,
                                     color: Colors.black,
@@ -106,7 +106,7 @@ class _ContactUsState extends State<ContactUs> {
                                   ),
                                 ),
                                 const Text(
-                                  'Gigiri Address - 8:00am to 8:00pm',
+                                  'Gigiri Address - 7:00am to 8:00pm',
                                   style: TextStyle(
                                     fontSize: 15.0,
                                     color: Colors.black,
@@ -137,7 +137,7 @@ class _ContactUsState extends State<ContactUs> {
                                 ),
                                 const SizedBox(height: 10),
                                 const Text(
-                                  'Hurlinganm Address: +254 112 494 142',
+                                  'Hurlingham Address: +254 112 494 142',
                                   style: TextStyle(
                                     fontSize: 15.0,
                                     color: Colors.black,
@@ -225,33 +225,24 @@ class _ContactUsState extends State<ContactUs> {
                         ),
                       ),
                     ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.email,
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                        SizedBox(width: 10),
-                        Icon(
-                          Icons.email,
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                        SizedBox(width: 10),
-                        Icon(
-                          Icons.email,
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                        SizedBox(width: 10),
-                        Icon(
-                          Icons.email,
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset('assets/facebook_fb.png',
+                              height: 27, width: 27),
+                          const SizedBox(width: 20),
+                          Image.asset('assets/instagram.png',
+                              height: 30, width: 30),
+                          const SizedBox(width: 20),
+                          Image.asset('assets/twitter_x.png',
+                              height: 27, width: 27),
+                          // const SizedBox(width: 10),
+                          // Image.asset('assets/youtube.png',
+                          //     height: 25, width: 25),
+                        ],
+                      ),
                     ),
                   ],
                 ),
