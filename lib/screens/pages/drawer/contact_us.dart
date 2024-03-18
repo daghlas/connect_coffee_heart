@@ -88,7 +88,25 @@ class _ContactUsState extends State<ContactUs> {
                                 ),
                                 const SizedBox(height: 10),
                                 const Text(
+                                  'Hurlinganm Address - 8:00am to 8:00pm',
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'IBMPlexSans',
+                                  ),
+                                ),
+                                const Text(
                                   'Riverside Address - 8:00am to 8:00pm',
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'IBMPlexSans',
+                                  ),
+                                ),
+                                const Text(
+                                  'Gigiri Address - 8:00am to 8:00pm',
                                   style: TextStyle(
                                     fontSize: 15.0,
                                     color: Colors.black,
@@ -119,7 +137,25 @@ class _ContactUsState extends State<ContactUs> {
                                 ),
                                 const SizedBox(height: 10),
                                 const Text(
+                                  'Hurlinganm Address: +254 112 494 142',
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'IBMPlexSans',
+                                  ),
+                                ),
+                                const Text(
                                   'Riverside Address: +254 708 790 480',
+                                  style: TextStyle(
+                                    fontSize: 15.0,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'IBMPlexSans',
+                                  ),
+                                ),
+                                const Text(
+                                  'Gigiri Address: +254 708 790 481',
                                   style: TextStyle(
                                     fontSize: 15.0,
                                     color: Colors.black,
@@ -158,12 +194,64 @@ class _ContactUsState extends State<ContactUs> {
                                     fontFamily: 'IBMPlexSans',
                                   ),
                                 ),
-                                const SizedBox(height: 20),
+                                Container(
+                                  transform:
+                                      Matrix4.translationValues(0.0, 50.0, 0.0),
+                                  decoration: const BoxDecoration(
+                                      color: Colors.brown,
+                                      shape: BoxShape.circle),
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(15.0),
+                                    child: Icon(
+                                      Icons.email,
+                                      color: Colors.white,
+                                      size: 30,
+                                    ),
+                                  ),
+                                ),
                               ],
                             ),
                           ),
                         ),
                       ),
+                    ),
+                    const Center(
+                      child: Text(
+                        'Follow us on',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'IBMPlexSans',
+                        ),
+                      ),
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.email,
+                          color: Colors.black,
+                          size: 30,
+                        ),
+                        SizedBox(width: 10),
+                        Icon(
+                          Icons.email,
+                          color: Colors.black,
+                          size: 30,
+                        ),
+                        SizedBox(width: 10),
+                        Icon(
+                          Icons.email,
+                          color: Colors.black,
+                          size: 30,
+                        ),
+                        SizedBox(width: 10),
+                        Icon(
+                          Icons.email,
+                          color: Colors.black,
+                          size: 30,
+                        ),
+                      ],
                     ),
                   ],
                 ),
