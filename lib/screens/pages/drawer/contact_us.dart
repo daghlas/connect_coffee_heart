@@ -37,32 +37,73 @@ class _ContactUsState extends State<ContactUs> {
           Expanded(
             child: Container(
               margin: const EdgeInsets.only(top: 100.0),
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(60),
-                      topRight: Radius.circular(60))),
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Center(
-                      child: Text(
-                        'BODY',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'IBMPlexSans',
-                        ),
+              decoration: const BoxDecoration(color: Colors.white),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(40.0, 0, 40.0, 40.0),
+                child: Center(
+                  child: Card(
+                    color: Colors.grey[100],
+                    child: const Padding(
+                      padding: EdgeInsets.all(20.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Center(
+                              child: Text(
+                                'GET IN TOUCH',
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'IBMPlexSans',
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Text(
+                            'locations & working hrs',
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'IBMPlexSans',
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Divider(),
+                          SizedBox(height: 10),
+                          Text(
+                            'phone',
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'IBMPlexSans',
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Divider(),
+                          SizedBox(height: 10),
+                          Text(
+                            'email',
+                            style: TextStyle(
+                              fontSize: 20.0,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'IBMPlexSans',
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
+                  ),
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
