@@ -13,16 +13,20 @@ class _FavouritesPageState extends State<FavouritesPage> {
     return SafeArea(
       child: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.fromLTRB(13.0, 80.0, 13.0, 0.0),
-            child: Text(
-              'Favourites',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'IBMPlexSans'),
-            ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(80.0, 80.0, 80.0, 0),
+            child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(13),
+                        topRight: Radius.circular(13),
+                        bottomLeft: Radius.circular(13),
+                        bottomRight: Radius.circular(13))),
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Image.asset('assets/connect.png'),
+                )),
           ),
 
           const SizedBox(height: 50.0),
@@ -32,9 +36,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
             child: Container(
               decoration: const BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(34.0),
-                    bottomRight: Radius.circular(34.0)),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(34.0)),
               ),
 
               // CONTENT GOES HERE
