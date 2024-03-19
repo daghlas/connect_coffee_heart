@@ -48,11 +48,14 @@ class MenuItemTile extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             IconButton(
-                onPressed: onPressed,
-                icon: const Icon(
-                  Icons.favorite,
-                  color: Colors.red,
-                )),
+              onPressed: () {
+                _showToast(context);
+              },
+              icon: const Icon(
+                Icons.favorite,
+                color: Colors.red,
+              ),
+            ),
             Container(
               margin: const EdgeInsets.all(8),
               decoration: const BoxDecoration(
@@ -65,6 +68,25 @@ class MenuItemTile extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  void _showToast(BuildContext context) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      const SnackBar(
+        content: Center(
+            child: Text(
+          'ADDED TO FAVOURITES',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontFamily: 'IBMPlexSans',
+          ),
+        )),
+        backgroundColor: Colors.black,
+        // action: SnackBarAction(
+        //     label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
       ),
     );
   }
