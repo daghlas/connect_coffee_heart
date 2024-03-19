@@ -29,7 +29,19 @@ class _FavouritesPageState extends State<FavouritesPage> {
                 )),
           ),
 
-          const SizedBox(height: 50.0),
+          const SizedBox(height: 15.0),
+
+            const Text(
+              'Make Life Better',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2.0,
+                // fontFamily: 'IBMPlexSans',
+              ),
+            ),
+
+            const SizedBox(height: 20.0),
 
           //list of menu items
           Expanded(
