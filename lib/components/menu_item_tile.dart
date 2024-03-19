@@ -44,15 +44,26 @@ class MenuItemTile extends StatelessWidget {
             style: const TextStyle(color: Colors.grey),
           ),
         ),
-        trailing: Container(
-          margin: const EdgeInsets.all(8),
-          decoration:
-              const BoxDecoration(color: Colors.brown, shape: BoxShape.circle),
-          child: IconButton(
-            icon: icon,
-            color: Colors.white,
-            onPressed: onPressed,
-          ),
+        trailing: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            IconButton(
+                onPressed: onPressed,
+                icon: const Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                )),
+            Container(
+              margin: const EdgeInsets.all(8),
+              decoration: const BoxDecoration(
+                  color: Colors.brown, shape: BoxShape.circle),
+              child: IconButton(
+                icon: icon,
+                color: Colors.white,
+                onPressed: onPressed,
+              ),
+            ),
+          ],
         ),
       ),
     );
