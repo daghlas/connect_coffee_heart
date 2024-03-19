@@ -39,50 +39,50 @@ class _MenuPageState extends State<MenuPage> {
               child: Container(
                 decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(34),
-                      bottomRight: Radius.circular(34.0)),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(34)),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.fromLTRB(20.0, 30.0, 0, 5.0),
-                      child: Text(
-                        'Explore our menu & make orders',
-                        textAlign: TextAlign.start,
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.bold),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.fromLTRB(20.0, 30.0, 0, 5.0),
+                        child: Text(
+                          'Explore our menu & make orders',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
-                    ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: value.menuList.length,
-                        itemBuilder: (context, index) {
-                          // get individual menu item
-                          Menu menuItem = value.menuList[index];
+                      ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: value.menuList.length,
+                          itemBuilder: (context, index) {
+                            // get individual menu item
+                            Menu menuItem = value.menuList[index];
 
-                          // Retrieve menu name data to pass to next context
-                          String name = value.menuList[index].name;
+                            // Retrieve menu name data to pass to next context
+                            String name = value.menuList[index].name;
 
-                          // return the tile for the item
-                          return MenuTile(
-                            menu: menuItem,
-                            icon: const Icon(Icons.arrow_forward_ios),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      MenuItemPage(name: name),
-                                ),
-                              );
-                            },
-                          );
-                        }),
-                  ],
+                            // return the tile for the item
+                            return MenuTile(
+                              menu: menuItem,
+                              icon: const Icon(Icons.arrow_forward_ios),
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        MenuItemPage(name: name),
+                                  ),
+                                );
+                              },
+                            );
+                          }),
+                    ],
+                  ),
                 ),
               ),
             )
