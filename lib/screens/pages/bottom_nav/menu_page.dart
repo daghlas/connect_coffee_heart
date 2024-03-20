@@ -41,6 +41,7 @@ class _MenuPageState extends State<MenuPage> {
             const Text(
               'Make Life Better',
               style: TextStyle(
+                fontSize: 15.0,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 letterSpacing: 2.0,
