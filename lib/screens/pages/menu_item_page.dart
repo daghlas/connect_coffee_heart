@@ -24,17 +24,21 @@ class _MenuItemPageState extends State<MenuItemPage> {
     return Consumer<ConnectMenu>(
       builder: (BuildContext context, ConnectMenu value, Widget? child) =>
           Scaffold(
-        backgroundColor: Colors.grey[350],
+        backgroundColor: Colors.brown[400],
         body: Stack(children: [
           Container(
-            margin: const EdgeInsets.fromLTRB(0.0, 40.0, 0.0, 20.0),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/coffee_bg.png'), fit: BoxFit.fill),
+            ),
+            margin: const EdgeInsets.only(top: 25.0),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+                      padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 8.0),
                       child: IconButton(
                         icon: const Icon(Icons.arrow_back_ios),
                         color: Colors.black,
@@ -54,7 +58,7 @@ class _MenuItemPageState extends State<MenuItemPage> {
                       child: const Padding(
                         padding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
                         child: CircleAvatar(
-                          radius: 25.0,
+                          radius: 23.0,
                           backgroundColor: Colors.brown,
                           foregroundColor: Colors.white,
                           child: Icon(Icons.shopping_cart),
@@ -80,7 +84,7 @@ class _MenuItemPageState extends State<MenuItemPage> {
                             fontWeight: FontWeight.bold,
                             fontFamily: 'IBMPlexSans'),
                       ),
-                      const SizedBox(height: 10.0),
+                      // const SizedBox(height: 5.0),
 
                       //list of menu items
                       Expanded(
