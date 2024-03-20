@@ -21,19 +21,32 @@ class _MenuPageState extends State<MenuPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(80.0, 80.0, 80.0, 0),
+              padding: const EdgeInsets.fromLTRB(100.0, 80.0, 100.0, 0),
               child: Container(
                   decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(13),
-                          topRight: Radius.circular(13),
-                          bottomLeft: Radius.circular(13),
-                          bottomRight: Radius.circular(13))),
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(10))),
                   child: Padding(
-                    padding: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(10.0),
                     child: Image.asset('assets/connect.png'),
                   )),
+            ),
+
+            const SizedBox(height: 15.0),
+
+            const Text(
+              'Good Morning, Daghlas',
+              style: TextStyle(
+                fontSize: 25.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2.0,
+                fontFamily: 'IBMPlexSans',
+              ),
             ),
 
             const SizedBox(height: 15.0),

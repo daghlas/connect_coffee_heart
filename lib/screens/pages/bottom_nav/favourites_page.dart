@@ -13,36 +13,24 @@ class _FavouritesPageState extends State<FavouritesPage> {
     return SafeArea(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(80.0, 80.0, 80.0, 0),
-            child: Container(
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(13),
-                        topRight: Radius.circular(13),
-                        bottomLeft: Radius.circular(13),
-                        bottomRight: Radius.circular(13))),
-                child: Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Image.asset('assets/connect.png'),
-                )),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(80.0, 25.0, 80.0, 0),
+            child: Padding(
+              padding: EdgeInsets.all(15.0),
+              child: Text(
+                'FAVOURITES',
+                style: TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2.0,
+                  // fontFamily: 'IBMPlexSans',
+                ),
+              ),
+            ),
           ),
 
           const SizedBox(height: 15.0),
-
-            const Text(
-              'Make Life Better',
-              style: TextStyle(
-                fontSize: 15.0,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 2.0,
-                // fontFamily: 'IBMPlexSans',
-              ),
-            ),
-
-            const SizedBox(height: 20.0),
 
           //list of menu items
           Expanded(
@@ -59,7 +47,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
                   const Padding(
                     padding: EdgeInsets.fromLTRB(20.0, 30.0, 0, 5.0),
                     child: Text(
-                      'Favourites',
+                      'Your preferences - Favourites',
                       textAlign: TextAlign.start,
                       style: TextStyle(
                           color: Colors.black,

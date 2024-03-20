@@ -25,36 +25,24 @@ class _CartPageState extends State<CartPage> {
           SafeArea(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(80.0, 80.0, 80.0, 0),
-              child: Container(
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(13),
-                          topRight: Radius.circular(13),
-                          bottomLeft: Radius.circular(13),
-                          bottomRight: Radius.circular(13))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Image.asset('assets/connect.png'),
-                  )),
-            ),
-
-            const SizedBox(height: 15.0),
-
-            const Text(
-              'Make Life Better',
-              style: TextStyle(
-                fontSize: 15.0,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 2.0,
-                // fontFamily: 'IBMPlexSans',
+            const Padding(
+              padding: EdgeInsets.fromLTRB(80.0, 25.0, 80.0, 0),
+              child: Padding(
+                padding: EdgeInsets.all(15.0),
+                child: Text(
+                  'YOUR CART',
+                  style: TextStyle(
+                    fontSize: 15.0,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2.0,
+                    // fontFamily: 'IBMPlexSans',
+                  ),
+                ),
               ),
             ),
 
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 15.0),
 
             // list of menu items
             Expanded(
@@ -63,41 +51,38 @@ class _CartPageState extends State<CartPage> {
                   color: Colors.white,
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(34)),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(20.0, 30.0, 0, 5.0),
-                        child: Text(
-                          'Cart',
-                          textAlign: TextAlign.start,
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.bold),
-                        ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(20.0, 30.0, 0, 5.0),
+                      child: Text(
+                        'Check out items - Cart',
+                        textAlign: TextAlign.start,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold),
                       ),
-                      ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: value.userCart.length,
-                          itemBuilder: (context, index) {
-                            // get individual menu item
-                            MenuItems menuItem = value.userCart[index];
+                    ),
+                    ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: value.userCart.length,
+                        itemBuilder: (context, index) {
+                          // get individual menu item
+                          MenuItems menuItem = value.userCart[index];
 
-                            // return the tile for the item
-                            return MenuItemTile(
-                              menuItems: menuItem,
-                              onPressed: () {
-                                removeFromCart(menuItem);
-                                _showToast(context);
-                              },
-                              icon: const Icon(Icons.delete),
-                            );
-                          }),
-                    ],
-                  ),
+                          // return the tile for the item
+                          return MenuItemTile(
+                            menuItems: menuItem,
+                            onPressed: () {
+                              removeFromCart(menuItem);
+                              _showToast(context);
+                            },
+                            icon: const Icon(Icons.delete),
+                          );
+                        }),
+                  ],
                 ),
               ),
             )
