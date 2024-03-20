@@ -38,9 +38,19 @@ class _ContactUsState extends State<ContactUs> {
                   )),
             ),
           ),
+          const SizedBox(height: 15.0),
+          const Text(
+            'Make Life Better',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              letterSpacing: 2.0,
+              // fontFamily: 'IBMPlexSans',
+            ),
+          ),
           Expanded(
             child: Container(
-              margin: const EdgeInsets.only(top: 100.0),
+              margin: const EdgeInsets.only(top: 80.0),
               decoration: const BoxDecoration(color: Colors.white),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25.0, 0, 25.0, 40.0),
