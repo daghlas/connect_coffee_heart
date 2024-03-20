@@ -15,8 +15,7 @@ class MenuItemTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.grey[100],
-      elevation: 0.0,
+      color: Colors.white,
       margin: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 0),
       child: ListTile(
         contentPadding: const EdgeInsets.all(10.0),
