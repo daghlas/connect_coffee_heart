@@ -52,7 +52,7 @@ class _MenuPageState extends State<MenuPage> {
             const SizedBox(height: 15.0),
 
             const Text(
-              'Make Life Better',
+              '- Make life Better -',
               style: TextStyle(
                 fontSize: 15.0,
                 color: Colors.white,
