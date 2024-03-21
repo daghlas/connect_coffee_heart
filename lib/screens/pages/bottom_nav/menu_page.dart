@@ -38,9 +38,9 @@ class _MenuPageState extends State<MenuPage> {
 
             const SizedBox(height: 15.0),
 
-            const Text(
-              'Good Morning, Daghlas',
-              style: TextStyle(
+            Text(
+              greeting(),
+              style: const TextStyle(
                 fontSize: 25.0,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -120,5 +120,17 @@ class _MenuPageState extends State<MenuPage> {
         ),
       ),
     );
+  }
+
+  // greeting tag
+  String greeting() {
+    var hour = DateTime.now().hour;
+    if (hour < 12) {
+      return 'Good Morning';
+    }
+    if (hour < 17) {
+      return 'Good Afternoon';
+    }
+    return 'Good Evening';
   }
 }
