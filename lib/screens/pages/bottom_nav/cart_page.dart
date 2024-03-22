@@ -82,6 +82,42 @@ class _CartPageState extends State<CartPage> {
                             icon: const Icon(Icons.delete),
                           );
                         }),
+                    const Spacer(),
+                    Container(
+                      height: 50.0,
+                      margin: const EdgeInsets.fromLTRB(50.0, 20, 50, 20),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12.0),
+                          color: Colors.brown),
+                      child: const Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'PAY NOW :',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13.0,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'IBMPlexSans',
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Text(
+                              '500/-',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13.0,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'IBMPlexSans',
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
