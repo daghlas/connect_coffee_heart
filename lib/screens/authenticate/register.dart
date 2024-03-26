@@ -94,48 +94,50 @@ class _RegisterState extends State<Register> {
                                   ]),
                               child: Form(
                                 key: _formalKey,
-                                child: Column(children: <Widget>[
-                                  Container(
-                                    padding: const EdgeInsets.all(10.0),
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                            bottom: BorderSide(
-                                                color: Colors.grey[200]!))),
-                                    child: TextFormField(
-                                      decoration: const InputDecoration(
-                                          hintText: 'Enter Email',
-                                          hintStyle:
-                                              TextStyle(color: Colors.grey),
-                                          border: InputBorder.none),
-                                      validator: (val) =>
-                                          val!.isEmpty ? 'Enter email' : null,
-                                      onChanged: (val) {
-                                        setState(() {
-                                          email = val;
-                                        });
-                                      },
+                                child: Column(
+                                  children: <Widget>[
+                                    Container(
+                                      padding: const EdgeInsets.all(10.0),
+                                      decoration: BoxDecoration(
+                                          border: Border(
+                                              bottom: BorderSide(
+                                                  color: Colors.grey[200]!))),
+                                      child: TextFormField(
+                                        decoration: const InputDecoration(
+                                            hintText: 'Enter Email',
+                                            hintStyle:
+                                                TextStyle(color: Colors.grey),
+                                            border: InputBorder.none),
+                                        validator: (val) =>
+                                            val!.isEmpty ? 'Enter email' : null,
+                                        onChanged: (val) {
+                                          setState(() {
+                                            email = val;
+                                          });
+                                        },
+                                      ),
                                     ),
-                                  ),
-                                  Container(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: TextFormField(
-                                      decoration: const InputDecoration(
-                                          hintText: 'Create Password',
-                                          hintStyle:
-                                              TextStyle(color: Colors.grey),
-                                          border: InputBorder.none),
-                                      obscureText: true,
-                                      validator: (val) => val!.length < 6
-                                          ? 'Enter valid password'
-                                          : null,
-                                      onChanged: (val) {
-                                        setState(() {
-                                          password = val;
-                                        });
-                                      },
-                                    ),
-                                  )
-                                ]),
+                                    Container(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: TextFormField(
+                                        decoration: const InputDecoration(
+                                            hintText: 'Create Password',
+                                            hintStyle:
+                                                TextStyle(color: Colors.grey),
+                                            border: InputBorder.none),
+                                        obscureText: true,
+                                        validator: (val) => val!.length < 6
+                                            ? 'Enter valid password'
+                                            : null,
+                                        onChanged: (val) {
+                                          setState(() {
+                                            password = val;
+                                          });
+                                        },
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
                             const SizedBox(height: 50.0),
