@@ -25,17 +25,19 @@ class _ContactUsState extends State<ContactUs> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(80.0, 20.0, 80.0, 0),
               child: Container(
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(13),
-                          topRight: Radius.circular(13),
-                          bottomLeft: Radius.circular(13),
-                          bottomRight: Radius.circular(13))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Image.asset('assets/connect.png'),
-                  )),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(13),
+                      topRight: Radius.circular(13),
+                      bottomLeft: Radius.circular(13),
+                      bottomRight: Radius.circular(13)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Image.asset('assets/connect.png'),
+                ),
+              ),
             ),
           ),
           const SizedBox(height: 15.0),
