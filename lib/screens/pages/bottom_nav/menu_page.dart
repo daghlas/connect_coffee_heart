@@ -23,17 +23,19 @@ class _MenuPageState extends State<MenuPage> {
             Padding(
               padding: const EdgeInsets.fromLTRB(100.0, 80.0, 100.0, 0),
               child: Container(
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(10),
-                          topRight: Radius.circular(10),
-                          bottomLeft: Radius.circular(10),
-                          bottomRight: Radius.circular(10))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Image.asset('assets/connect.png'),
-                  )),
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      topRight: Radius.circular(10),
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image.asset('assets/connect.png'),
+                ),
+              ),
             ),
 
             const SizedBox(height: 15.0),
