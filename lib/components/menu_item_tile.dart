@@ -76,13 +76,14 @@ class MenuItemTile extends StatelessWidget {
     scaffold.showSnackBar(
       const SnackBar(
         content: Center(
-            child: Text(
-          'ADDED TO FAVOURITES',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontFamily: 'IBMPlexSans',
+          child: Text(
+            'ADDED TO FAVOURITES',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontFamily: 'IBMPlexSans',
+            ),
           ),
-        )),
+        ),
         backgroundColor: Colors.black,
         // action: SnackBarAction(
         //     label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
