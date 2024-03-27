@@ -23,109 +23,113 @@ class _MenuItemPageState extends State<MenuItemPage> {
   Widget build(BuildContext context) {
     return Consumer<ConnectMenu>(
       builder: (BuildContext context, ConnectMenu value, Widget? child) =>
-          Scaffold(
-        backgroundColor: Colors.brown[400],
-        body: Stack(children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/coffee_bg.png'), fit: BoxFit.fill),
-            ),
-            margin: const EdgeInsets.only(top: 25.0),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 8.0),
-                      child: IconButton(
-                        icon: const Icon(Icons.arrow_back_ios),
-                        color: Colors.black,
-                        onPressed: () {
-                          Navigator.pop(context, true);
-                        },
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const CartPage()),
-                        );
-                      },
-                      child: const Padding(
-                        padding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
-                        child: CircleAvatar(
-                          radius: 23.0,
-                          backgroundColor: Colors.brown,
-                          foregroundColor: Colors.white,
-                          child: Icon(Icons.shopping_cart),
+          SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.brown[400],
+          body: Stack(children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/coffee_bg.png'),
+                    fit: BoxFit.fill),
+              ),
+              // margin: const EdgeInsets.only(top: 25.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding:
+                            const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 8.0),
+                        child: IconButton(
+                          icon: const Icon(Icons.arrow_back_ios),
+                          color: Colors.black,
+                          onPressed: () {
+                            Navigator.pop(context, true);
+                          },
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text(
-                        widget.name,
-                        style: const TextStyle(
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'IBMPlexSans'),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CartPage()),
+                          );
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+                          child: CircleAvatar(
+                            radius: 23.0,
+                            backgroundColor: Colors.brown,
+                            foregroundColor: Colors.white,
+                            child: Icon(Icons.shopping_cart),
+                          ),
+                        ),
                       ),
-                      const SizedBox(height: 10.0),
-                      const Text(
-                        'add items to cart and order',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'IBMPlexSans'),
-                      ),
-                      // const SizedBox(height: 5.0),
-
-                      //list of menu items
-                      Expanded(
-                        child: ListView.builder(
-                            itemCount: value.menuList.length,
-                            itemBuilder: (context, index) {
-                              // get individual menu item
-                              MenuItems menuItems =
-                                  value.espressoCoffeeList[index];
-
-                              // return the tile for the item
-                              return MenuItemTile(
-                                menuItems: menuItems,
-                                icon: Container(
-                                  decoration: const BoxDecoration(
-                                    color: Colors.brown,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(6.0),
-                                        bottomRight: Radius.circular(6.0),
-                                        topRight: Radius.circular(6.0),
-                                        bottomLeft: Radius.circular(6.0)),
-                                  ),
-                                  child: const Icon(
-                                    Icons.add,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                onPressed: () {
-                                  addToCart(menuItems);
-                                  _showToast(context);
-                                },
-                              );
-                            }),
-                      )
                     ],
                   ),
-                ),
-              ],
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text(
+                          widget.name,
+                          style: const TextStyle(
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'IBMPlexSans'),
+                        ),
+                        const SizedBox(height: 10.0),
+                        const Text(
+                          'add items to cart and order',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'IBMPlexSans'),
+                        ),
+                        // const SizedBox(height: 5.0),
+
+                        //list of menu items
+                        Expanded(
+                          child: ListView.builder(
+                              itemCount: value.menuList.length,
+                              itemBuilder: (context, index) {
+                                // get individual menu item
+                                MenuItems menuItems =
+                                    value.espressoCoffeeList[index];
+
+                                // return the tile for the item
+                                return MenuItemTile(
+                                  menuItems: menuItems,
+                                  icon: Container(
+                                    decoration: const BoxDecoration(
+                                      color: Colors.brown,
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(6.0),
+                                          bottomRight: Radius.circular(6.0),
+                                          topRight: Radius.circular(6.0),
+                                          bottomLeft: Radius.circular(6.0)),
+                                    ),
+                                    child: const Icon(
+                                      Icons.add,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    addToCart(menuItems);
+                                    _showToast(context);
+                                  },
+                                );
+                              }),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ]),
+          ]),
+        ),
       ),
     );
   }
