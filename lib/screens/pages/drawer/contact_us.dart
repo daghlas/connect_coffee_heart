@@ -23,7 +23,7 @@ class _ContactUsState extends State<ContactUs> {
         children: [
           Center(
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(80.0, 20.0, 80.0, 0),
+              padding: const EdgeInsets.fromLTRB(80.0, 10.0, 80.0, 0),
               child: Container(
                 decoration: const BoxDecoration(
                   color: Colors.white,
