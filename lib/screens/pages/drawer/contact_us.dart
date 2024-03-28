@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactUs extends StatefulWidget {
   const ContactUs({super.key});
@@ -248,8 +250,11 @@ class _ContactUsState extends State<ContactUs> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           GestureDetector(
-                            onTap: (){
-
+                            onTap: () {
+                              if (kDebugMode) {
+                                print('facebook button');
+                              }
+                              _launchURL('https://www.facebook.com');
                             },
                             child: Image.asset('assets/facebook_fb.png',
                                 height: 30, width: 30),
@@ -276,11 +281,11 @@ class _ContactUsState extends State<ContactUs> {
     );
   }
 
-  // void _launchURL(String url) async {
-  //   if (await canLaunch(url)) {
-  //     await launch(url);
-  //   } else {
-  //     throw 'Could not launch $url';
-  //   }
-  // }
+  void _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 }
