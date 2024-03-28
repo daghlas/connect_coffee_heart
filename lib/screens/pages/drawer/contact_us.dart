@@ -247,8 +247,13 @@ class _ContactUsState extends State<ContactUs> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset('assets/facebook_fb.png',
-                              height: 30, width: 30),
+                          GestureDetector(
+                            onTap: (){
+
+                            },
+                            child: Image.asset('assets/facebook_fb.png',
+                                height: 30, width: 30),
+                          ),
                           const SizedBox(width: 20),
                           Image.asset('assets/instagram.png',
                               height: 33, width: 33),
@@ -270,4 +275,12 @@ class _ContactUsState extends State<ContactUs> {
       ),
     );
   }
+
+  // void _launchURL(String url) async {
+  //   if (await canLaunch(url)) {
+  //     await launch(url);
+  //   } else {
+  //     throw 'Could not launch $url';
+  //   }
+  // }
 }
