@@ -260,8 +260,16 @@ class _ContactUsState extends State<ContactUs> {
                                 height: 30, width: 30),
                           ),
                           const SizedBox(width: 20),
-                          Image.asset('assets/instagram.png',
-                              height: 33, width: 33),
+                          GestureDetector(
+                            onTap: () {
+                              if (kDebugMode) {
+                                print('instagram button');
+                              }
+                              _launchURL('https://www.instagram.com');
+                            },
+                            child: Image.asset('assets/instagram.png',
+                                height: 33, width: 33),
+                          ),
                           const SizedBox(width: 20),
                           Image.asset('assets/twitter_x.png',
                               height: 30, width: 30),
