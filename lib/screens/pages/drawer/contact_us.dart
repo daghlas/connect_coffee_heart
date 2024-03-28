@@ -271,8 +271,16 @@ class _ContactUsState extends State<ContactUs> {
                                 height: 33, width: 33),
                           ),
                           const SizedBox(width: 20),
-                          Image.asset('assets/twitter_x.png',
-                              height: 30, width: 30),
+                          GestureDetector(
+                            onTap: () {
+                              if (kDebugMode) {
+                                print('twitter button');
+                              }
+                              _launchURL('https://twitter.com/home');
+                            },
+                            child: Image.asset('assets/twitter_x.png',
+                                height: 30, width: 30),
+                          ),
                           // const SizedBox(width: 10),
                           // Image.asset('assets/youtube.png',
                           //     height: 25, width: 25),
