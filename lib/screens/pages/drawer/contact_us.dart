@@ -254,7 +254,7 @@ class _ContactUsState extends State<ContactUs> {
                               if (kDebugMode) {
                                 print('facebook button');
                               }
-                              _launchURL('https://www.facebook.com');
+                              _launchUrl(Uri.parse('https://www.facebook.com'));
                             },
                             child: Image.asset('assets/facebook_fb.png',
                                 height: 30, width: 30),
@@ -265,7 +265,8 @@ class _ContactUsState extends State<ContactUs> {
                               if (kDebugMode) {
                                 print('instagram button');
                               }
-                              _launchURL('https://www.instagram.com');
+                              _launchUrl(
+                                  Uri.parse('https://www.instagram.com'));
                             },
                             child: Image.asset('assets/instagram.png',
                                 height: 33, width: 33),
@@ -276,7 +277,7 @@ class _ContactUsState extends State<ContactUs> {
                               if (kDebugMode) {
                                 print('twitter button');
                               }
-                              _launchURL('https://twitter.com/home');
+                              _launchUrl(Uri.parse('https://twitter.com'));
                             },
                             child: Image.asset('assets/twitter_x.png',
                                 height: 30, width: 30),
@@ -297,11 +298,9 @@ class _ContactUsState extends State<ContactUs> {
     );
   }
 
-  void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
+  Future<void> _launchUrl(Uri url) async {
+    if (!await launchUrl(url)) {
+      throw Exception('Could not launch $url');
     }
   }
 }
