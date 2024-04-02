@@ -213,18 +213,23 @@ class _ContactUsState extends State<ContactUs> {
                                     fontFamily: 'IBMPlexSans',
                                   ),
                                 ),
-                                Container(
-                                  transform:
-                                      Matrix4.translationValues(0.0, 50.0, 0.0),
-                                  decoration: const BoxDecoration(
-                                      color: Colors.brown,
-                                      shape: BoxShape.circle),
-                                  child: const Padding(
-                                    padding: EdgeInsets.all(15.0),
-                                    child: Icon(
-                                      Icons.email,
-                                      color: Colors.white,
-                                      size: 30,
+                                GestureDetector(
+                                  onTap: () {
+                                    _sendEmail('marketing@connectcoffee.net');
+                                  },
+                                  child: Container(
+                                    transform: Matrix4.translationValues(
+                                        0.0, 50.0, 0.0),
+                                    decoration: const BoxDecoration(
+                                        color: Colors.brown,
+                                        shape: BoxShape.circle),
+                                    child: const Padding(
+                                      padding: EdgeInsets.all(15.0),
+                                      child: Icon(
+                                        Icons.email,
+                                        color: Colors.white,
+                                        size: 30,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -298,9 +303,24 @@ class _ContactUsState extends State<ContactUs> {
     );
   }
 
+  // contact us direct social media urls
   Future<void> _launchUrl(Uri url) async {
     if (!await launchUrl(url)) {
       throw Exception('Could not launch $url');
+    }
+  }
+
+  // email address contact
+  void _sendEmail(String email) async {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: email,
+    );
+
+    try {
+      await launchUrl(emailLaunchUri);
+    } catch (e) {
+      print('Error launching email: $e');
     }
   }
 }
