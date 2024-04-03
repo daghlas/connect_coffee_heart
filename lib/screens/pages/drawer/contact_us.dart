@@ -215,7 +215,7 @@ class _ContactUsState extends State<ContactUs> {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    _sendEmail('marketing@connectcoffee.net');
+                                    _sendEmail();
                                   },
                                   child: Container(
                                     transform: Matrix4.translationValues(
@@ -310,17 +310,20 @@ class _ContactUsState extends State<ContactUs> {
     }
   }
 
+  final String emailAddress = 'marketing@connectcoffee.net';
+
   // email address contact
-  void _sendEmail(String email) async {
+  void _sendEmail() async {
     final Uri emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: email,
+      path: emailAddress,
+      queryParameters: {'subject': 'Feedback'},
     );
 
-    try {
+    if (await canLaunchUrl(emailLaunchUri)) {
       await launchUrl(emailLaunchUri);
-    } catch (e) {
-      print('Error launching email: $e');
+    } else {
+      throw 'Could not launch email';
     }
   }
 }
