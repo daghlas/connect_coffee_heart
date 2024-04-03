@@ -204,7 +204,7 @@ class _ContactUsState extends State<ContactUs> {
                                   ],
                                 ),
                                 const SizedBox(height: 10),
-                                const Text(
+                                const SelectableText(
                                   'marketing@connectcoffee.net',
                                   style: TextStyle(
                                     fontSize: 15.0,
