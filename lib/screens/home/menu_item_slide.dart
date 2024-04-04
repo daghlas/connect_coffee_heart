@@ -22,13 +22,9 @@ class _ItemSlideState extends State<ItemSlide> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(80.0, 10.0, 80.0, 0),
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(13),
-                      topRight: Radius.circular(13),
-                      bottomLeft: Radius.circular(13),
-                      bottomRight: Radius.circular(13)),
+                  borderRadius: BorderRadius.circular(13),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
@@ -37,21 +33,11 @@ class _ItemSlideState extends State<ItemSlide> {
               ),
             ),
           ),
-          const SizedBox(height: 15.0),
-          const Text(
-            '- Make life Better -',
-            style: TextStyle(
-              fontSize: 15.0,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              // fontFamily: 'IBMPlexSans',
-            ),
-          ),
           Expanded(
             child: Container(
               margin: const EdgeInsets.only(top: 80.0),
-              decoration: const BoxDecoration(color: Colors.white),
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(13)),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25.0, 0, 25.0, 40.0),
                 child: Wrap(
@@ -71,7 +57,7 @@ class _ItemSlideState extends State<ItemSlide> {
                                   padding: EdgeInsets.all(10.0),
                                   child: Center(
                                     child: Text(
-                                      'GET IN TOUCH',
+                                      'Espresso / Espresso Macchiato',
                                       style: TextStyle(
                                         fontSize: 20.0,
                                         color: Colors.black,
@@ -82,146 +68,30 @@ class _ItemSlideState extends State<ItemSlide> {
                                   ),
                                 ),
                                 const SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      Icons.location_on,
-                                      color: Colors.grey,
-                                      size: 18,
-                                    ),
-                                    Text(
-                                      'locations & working hrs',
-                                      style: TextStyle(
-                                        color: Colors.brown[900],
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'IBMPlexSans',
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 10),
                                 const Text(
-                                  'Hurlingham Address - 8:00am to 7:00pm',
+                                  'This is an Espresso with steamed milk, usually with a shallow pool of foam floating on top',
                                   style: TextStyle(
                                     fontSize: 15.0,
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'IBMPlexSans',
                                   ),
-                                ),
-                                const Text(
-                                  'Riverside Address - 8:00am to 8:00pm',
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'IBMPlexSans',
-                                  ),
-                                ),
-                                const Text(
-                                  'Gigiri Address - 7:00am to 8:00pm',
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'IBMPlexSans',
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                const Divider(),
-                                const SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      Icons.phone,
-                                      color: Colors.grey,
-                                      size: 18,
-                                    ),
-                                    Text(
-                                      ' Phone',
-                                      style: TextStyle(
-                                        color: Colors.brown[900],
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'IBMPlexSans',
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 10),
-                                const Text(
-                                  'Hurlingham Address: +254 112 494 142',
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'IBMPlexSans',
-                                  ),
-                                ),
-                                const Text(
-                                  'Riverside Address: +254 708 790 480',
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'IBMPlexSans',
-                                  ),
-                                ),
-                                const Text(
-                                  'Gigiri Address: +254 708 790 481',
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'IBMPlexSans',
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                const Divider(),
-                                const SizedBox(height: 10),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      Icons.email,
-                                      color: Colors.grey,
-                                      size: 18,
-                                    ),
-                                    Text(
-                                      ' Email',
-                                      style: TextStyle(
-                                        color: Colors.brown[900],
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'IBMPlexSans',
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                const SizedBox(height: 10),
-                                const SelectableText(
-                                  'marketing@connectcoffee.net',
-                                  style: TextStyle(
-                                    fontSize: 15.0,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'IBMPlexSans',
-                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
                                 GestureDetector(
                                   onTap: () {},
                                   child: Container(
                                     transform: Matrix4.translationValues(
-                                        0.0, 50.0, 0.0),
+                                        0.0, 40.0, 0.0),
                                     decoration: const BoxDecoration(
                                         color: Colors.brown,
                                         shape: BoxShape.circle),
                                     child: const Padding(
-                                      padding: EdgeInsets.all(15.0),
+                                      padding: EdgeInsets.all(10.0),
                                       child: Icon(
-                                        Icons.email,
+                                        Icons.favorite,
                                         color: Colors.white,
-                                        size: 30,
+                                        size: 20,
                                       ),
                                     ),
                                   ),
@@ -232,41 +102,45 @@ class _ItemSlideState extends State<ItemSlide> {
                         ),
                       ),
                     ),
-                    const Center(
-                      child: Text(
-                        'Follow us on',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'IBMPlexSans',
-                        ),
-                      ),
-                    ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 15.0),
+                      padding: const EdgeInsets.only(top: 10.0),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          GestureDetector(
-                            onTap: () {},
-                            child: Image.asset('assets/facebook_fb.png',
-                                height: 30, width: 30),
+                          const Row(
+                            crossAxisAlignment: CrossAxisAlignment.baseline,
+                            textBaseline: TextBaseline.alphabetic,
+                            children: [
+                              Text('Ksh.'),
+                              Text(
+                                '250',
+                                style: TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'IBMPlexSans',
+                                    letterSpacing: 2.0),
+                              ),
+                            ],
                           ),
-                          const SizedBox(width: 20),
-                          GestureDetector(
-                            onTap: () {},
-                            child: Image.asset('assets/instagram.png',
-                                height: 33, width: 33),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                color: Colors.brown[600]),
+                            child: const Center(
+                              child: Padding(
+                                padding: EdgeInsets.all(15.0),
+                                child: Text(
+                                  'ADD TO CART',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'IBMPlexSans',
+                                      letterSpacing: 2.0),
+                                ),
+                              ),
+                            ),
                           ),
-                          const SizedBox(width: 20),
-                          GestureDetector(
-                            onTap: () {},
-                            child: Image.asset('assets/twitter_x.png',
-                                height: 30, width: 30),
-                          ),
-                          // const SizedBox(width: 10),
-                          // Image.asset('assets/youtube.png',
-                          //     height: 25, width: 25),
                         ],
                       ),
                     ),
