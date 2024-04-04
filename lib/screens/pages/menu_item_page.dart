@@ -20,19 +20,6 @@ class _MenuItemPageState extends State<MenuItemPage> {
     Provider.of<ConnectMenu>(context, listen: false).addItemToCart(menuItems);
   }
 
-  // bottom sheet
-    void showItemSlide() {
-      showModalBottomSheet(
-          context: context,
-          builder: (context) {
-            return Container(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
-              child: const ItemSlide(),
-            );
-          });
-    }
-
   @override
   Widget build(BuildContext context) {
     return Consumer<ConnectMenu>(

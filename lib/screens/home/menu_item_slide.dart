@@ -10,6 +10,6 @@ class ItemSlide extends StatefulWidget {
 class _ItemSlideState extends State<ItemSlide> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Text('ITEM SLIDE');
   }
 }
