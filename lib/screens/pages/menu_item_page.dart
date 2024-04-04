@@ -1,6 +1,7 @@
 import 'package:connect_coffee/components/menu_item_tile.dart';
 import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/menu.dart';
+import 'package:connect_coffee/screens/home/menu_item_slide.dart';
 import 'package:connect_coffee/screens/pages/bottom_nav/cart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,6 +19,19 @@ class _MenuItemPageState extends State<MenuItemPage> {
   void addToCart(MenuItems menuItems) {
     Provider.of<ConnectMenu>(context, listen: false).addItemToCart(menuItems);
   }
+
+  // bottom sheet
+    void showItemSlide() {
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return Container(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+              child: const ItemSlide(),
+            );
+          });
+    }
 
   @override
   Widget build(BuildContext context) {
