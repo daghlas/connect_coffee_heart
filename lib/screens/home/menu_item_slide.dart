@@ -18,18 +18,16 @@ class _ItemSlideState extends State<ItemSlide> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(80.0, 10.0, 80.0, 0),
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(13),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Image.asset('assets/connect.png'),
-                ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(80.0, 25.0, 80.0, 0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(13),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Image.asset('assets/connect.png'),
               ),
             ),
           ),
@@ -116,7 +114,7 @@ class _ItemSlideState extends State<ItemSlide> {
                                 '250',
                                 style: TextStyle(
                                     color: Colors.grey,
-                                    fontSize: 30,
+                                    fontSize: 35,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'IBMPlexSans',
                                     letterSpacing: 2.0),
@@ -130,13 +128,23 @@ class _ItemSlideState extends State<ItemSlide> {
                             child: const Center(
                               child: Padding(
                                 padding: EdgeInsets.all(15.0),
-                                child: Text(
-                                  'ADD TO CART',
-                                  style: TextStyle(
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'ADD TO CART',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontFamily: 'IBMPlexSans',
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Icon(
+                                      Icons.shopping_cart,
                                       color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'IBMPlexSans',
-                                      letterSpacing: 2.0),
+                                      //size: 20,
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
