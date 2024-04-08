@@ -13,9 +13,9 @@ class FavouritesPage extends StatefulWidget {
 
 class _FavouritesPageState extends State<FavouritesPage> {
   // remove item to cart
-  void removeFromCart(MenuItems menuItems) {
+  void removeFromFavourites(MenuItems menuItems) {
     Provider.of<ConnectMenu>(context, listen: false)
-        .removeItemFromCart(menuItems);
+        .removeItemFromFavourites(menuItems);
   }
 
   @override
@@ -70,16 +70,16 @@ class _FavouritesPageState extends State<FavouritesPage> {
                     ),
                     ListView.builder(
                         shrinkWrap: true,
-                        itemCount: value.userCart.length,
+                        itemCount: value.userFavourites.length,
                         itemBuilder: (context, index) {
                           // get individual menu item
-                          MenuItems menuItem = value.userCart[index];
+                          MenuItems menuItem = value.userFavourites[index];
 
                           // return the tile for the item
                           return MenuItemTile(
                             menuItems: menuItem,
                             onPressed: () {
-                              removeFromCart(menuItem);
+                              removeFromFavourites(menuItem);
                               _showToast(context);
                             },
                             icon: const Icon(Icons.delete),
@@ -102,13 +102,13 @@ class _FavouritesPageState extends State<FavouritesPage> {
       const SnackBar(
         content: Center(
             child: Text(
-          'REMOVED FROM CART',
+          'REMOVED FROM FAVOURITES',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontFamily: 'IBMPlexSans',
           ),
         )),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.red,
         // action: SnackBarAction(
         //     label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
       ),
