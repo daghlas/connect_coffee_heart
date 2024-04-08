@@ -106,4 +106,6 @@ class ConnectMenu extends ChangeNotifier {
 
   // user favourites
   final List<MenuItems> _userFavourites = [];
+  // get user cart
+  List<MenuItems> get userFavourites => _userFavourites;
 }
