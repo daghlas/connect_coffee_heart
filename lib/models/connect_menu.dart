@@ -113,4 +113,9 @@ class ConnectMenu extends ChangeNotifier {
     _userFavourites.add(menuItems);
     notifyListeners();
   }
+  // remove item from favourites
+  void removeItemFromFavourites(MenuItems menuItems) {
+    _userFavourites.remove(menuItems);
+    notifyListeners();
+  }
 }
