@@ -1,6 +1,8 @@
+import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/menu.dart';
 import 'package:connect_coffee/screens/home/menu_item_slide.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MenuItemTile extends StatelessWidget {
   final MenuItems menuItems;
@@ -26,6 +28,12 @@ class MenuItemTile extends StatelessWidget {
               child: const ItemSlide(),
             );
           });
+    }
+
+    // add item to cart
+    void addToFavouritest(MenuItems menuItems) {
+      Provider.of<ConnectMenu>(context, listen: false)
+          .addItemToFavourites(menuItems);
     }
 
     return GestureDetector(
@@ -68,6 +76,7 @@ class MenuItemTile extends StatelessWidget {
               IconButton(
                 onPressed: () {
                   _showToast(context);
+                  addToFavouritest(menuItems);
                 },
                 icon: const Icon(
                   Icons.favorite,

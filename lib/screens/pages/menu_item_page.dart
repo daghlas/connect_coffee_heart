@@ -3,6 +3,7 @@ import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/menu.dart';
 import 'package:connect_coffee/screens/home/menu_item_slide.dart';
 import 'package:connect_coffee/screens/pages/bottom_nav/cart_page.dart';
+import 'package:connect_coffee/screens/pages/bottom_nav/favourites_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -56,7 +57,7 @@ class _MenuItemPageState extends State<MenuItemPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const CartPage()),
+                                builder: (context) => const FavouritesPage()),
                           );
                         },
                         child: const Padding(
