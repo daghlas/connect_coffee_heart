@@ -108,4 +108,9 @@ class ConnectMenu extends ChangeNotifier {
   final List<MenuItems> _userFavourites = [];
   // get user favourites
   List<MenuItems> get userFavourites => _userFavourites;
+  // add item to favourites
+  void addItemToFavourites(MenuItems menuItems) {
+    _userFavourites.add(menuItems);
+    notifyListeners();
+  }
 }
