@@ -103,4 +103,7 @@ class ConnectMenu extends ChangeNotifier {
     _userCart.remove(menuItems);
     notifyListeners();
   }
+
+  // user favourites
+  final List<MenuItems> _userFavourites = [];
 }
