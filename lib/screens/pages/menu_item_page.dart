@@ -66,6 +66,24 @@ class _MenuItemPageState extends State<MenuItemPage> {
                             radius: 23.0,
                             backgroundColor: Colors.brown,
                             foregroundColor: Colors.white,
+                            child: Icon(Icons.favorite),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const CartPage()),
+                          );
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.fromLTRB(20.0, 8.0, 20.0, 8.0),
+                          child: CircleAvatar(
+                            radius: 23.0,
+                            backgroundColor: Colors.brown,
+                            foregroundColor: Colors.white,
                             child: Icon(Icons.shopping_cart),
                           ),
                         ),

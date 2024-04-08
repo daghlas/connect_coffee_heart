@@ -30,7 +30,7 @@ class MenuItemTile extends StatelessWidget {
           });
     }
 
-    // add item to cart
+    // add item to favourites
     void addToFavouritest(MenuItems menuItems) {
       Provider.of<ConnectMenu>(context, listen: false)
           .addItemToFavourites(menuItems);
