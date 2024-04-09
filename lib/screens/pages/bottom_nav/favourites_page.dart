@@ -82,7 +82,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
                               removeFromFavourites(menuItem);
                               _showToast(context);
                             },
-                            icon: const Icon(Icons.delete),
+                            icon: const Icon(Icons.favorite),
                           );
                         }),
                   ],
