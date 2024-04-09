@@ -78,12 +78,64 @@ class _ItemSlideState extends State<ItemSlide> {
                                   textAlign: TextAlign.center,
                                 ),
                                 const SizedBox(height: 20),
-                                const Row(
+                                Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text('HOT'),
-                                    SizedBox(width: 30),
-                                    Text('COLD'),
+                                    Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.brown,
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                        ),
+                                        child: const Padding(
+                                          padding: EdgeInsets.all(10.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                'HOT',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'IBMPlexSans',
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Icon(
+                                                Icons.favorite,
+                                                color: Colors.white,
+                                                size: 20,
+                                              ),
+                                            ],
+                                          ),
+                                        )),
+                                    const SizedBox(width: 30),
+                                    Container(
+                                        decoration: BoxDecoration(
+                                          color: Colors.grey,
+                                          borderRadius:
+                                              BorderRadius.circular(20.0),
+                                        ),
+                                        child: const Padding(
+                                          padding: EdgeInsets.all(10.0),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                'COLD',
+                                                style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'IBMPlexSans',
+                                                ),
+                                              ),
+                                              SizedBox(width: 5),
+                                              Icon(
+                                                Icons.favorite,
+                                                color: Colors.white,
+                                                size: 20,
+                                              ),
+                                            ],
+                                          ),
+                                        )),
                                   ],
                                 ),
                                 GestureDetector(
@@ -92,10 +144,10 @@ class _ItemSlideState extends State<ItemSlide> {
                                     transform: Matrix4.translationValues(
                                         0.0, 20.0, 0.0),
                                     decoration: const BoxDecoration(
-                                        color: Colors.brown,
+                                        color: Colors.black,
                                         shape: BoxShape.circle),
                                     child: const Padding(
-                                      padding: EdgeInsets.all(10.0),
+                                      padding: EdgeInsets.all(8.0),
                                       child: Icon(
                                         Icons.favorite,
                                         color: Colors.white,
