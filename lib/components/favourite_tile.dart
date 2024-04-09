@@ -1,8 +1,6 @@
-import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/menu.dart';
 import 'package:connect_coffee/screens/home/menu_item_slide.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class FavItemTile extends StatelessWidget {
   final MenuItems menuItems;

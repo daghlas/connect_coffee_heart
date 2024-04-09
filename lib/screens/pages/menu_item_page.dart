@@ -1,7 +1,6 @@
 import 'package:connect_coffee/components/menu_item_tile.dart';
 import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/menu.dart';
-import 'package:connect_coffee/screens/home/menu_item_slide.dart';
 import 'package:connect_coffee/screens/pages/bottom_nav/cart_page.dart';
 import 'package:connect_coffee/screens/pages/bottom_nav/favourites_page.dart';
 import 'package:flutter/material.dart';

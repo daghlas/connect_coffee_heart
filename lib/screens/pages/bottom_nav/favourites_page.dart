@@ -1,5 +1,4 @@
 import 'package:connect_coffee/components/favourite_tile.dart';
-import 'package:connect_coffee/components/menu_item_tile.dart';
 import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/menu.dart';
 import 'package:flutter/material.dart';
