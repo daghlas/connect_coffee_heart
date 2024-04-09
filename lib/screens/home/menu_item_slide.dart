@@ -26,18 +26,18 @@ class _ItemSlideState extends State<ItemSlide> {
                 borderRadius: BorderRadius.circular(13),
               ),
               child: Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Image.asset('assets/connect.png'),
               ),
             ),
           ),
           Expanded(
             child: Container(
-              margin: const EdgeInsets.only(top: 80.0),
+              margin: const EdgeInsets.only(top: 70.0),
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(13)),
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(25.0, 0, 25.0, 40.0),
+                padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Wrap(
                   //wraps content
                   children: [
@@ -47,7 +47,8 @@ class _ItemSlideState extends State<ItemSlide> {
                         child: Card(
                           color: Colors.grey[100],
                           child: Padding(
-                            padding: const EdgeInsets.all(20.0),
+                            padding: const EdgeInsets.fromLTRB(
+                                20.0, 20.0, 20.0, 0.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
@@ -76,11 +77,20 @@ class _ItemSlideState extends State<ItemSlide> {
                                   ),
                                   textAlign: TextAlign.center,
                                 ),
+                                const SizedBox(height: 20),
+                                const Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text('HOT'),
+                                    SizedBox(width: 30),
+                                    Text('COLD'),
+                                  ],
+                                ),
                                 GestureDetector(
                                   onTap: () {},
                                   child: Container(
                                     transform: Matrix4.translationValues(
-                                        0.0, 40.0, 0.0),
+                                        0.0, 20.0, 0.0),
                                     decoration: const BoxDecoration(
                                         color: Colors.brown,
                                         shape: BoxShape.circle),
@@ -101,7 +111,7 @@ class _ItemSlideState extends State<ItemSlide> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 10.0),
+                      padding: const EdgeInsets.only(top: 5.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
