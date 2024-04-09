@@ -1,0 +1,81 @@
+import 'package:connect_coffee/models/connect_menu.dart';
+import 'package:connect_coffee/models/menu.dart';
+import 'package:connect_coffee/screens/home/menu_item_slide.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+class FavItemTile extends StatelessWidget {
+  final MenuItems menuItems;
+  void Function()? onPressed;
+  final Widget icon;
+  FavItemTile({
+    super.key,
+    required this.menuItems,
+    required this.onPressed,
+    required this.icon,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // bottom sheet
+    void showItemSlide() {
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return Container(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+              child: const ItemSlide(),
+            );
+          });
+    }
+
+    return GestureDetector(
+      onTap: () {
+        print('CARD PRESSED');
+        showItemSlide();
+      },
+      child: Card(
+        color: Colors.white,
+        margin: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 0),
+        child: ListTile(
+          contentPadding: const EdgeInsets.all(10.0),
+          leading: CircleAvatar(
+            radius: 30.0,
+            backgroundColor: Colors.brown,
+            backgroundImage: AssetImage(menuItems.itemImage),
+          ),
+          title: Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Text(
+              menuItems.itemName,
+              style: const TextStyle(
+                  fontSize: 13.0,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'IBMPlexSans',
+                  letterSpacing: 1.0),
+            ),
+          ),
+          subtitle: Padding(
+            padding: const EdgeInsets.only(left: 8.0),
+            child: Text(
+              menuItems.itemPrice,
+              style: const TextStyle(color: Colors.grey),
+            ),
+          ),
+          trailing: Container(
+            margin: const EdgeInsets.all(8),
+            decoration: const BoxDecoration(
+                color: Colors.brown, shape: BoxShape.circle),
+            child: IconButton(
+              icon: icon,
+              color: Colors.white,
+              onPressed: onPressed,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
