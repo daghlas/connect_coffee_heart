@@ -1,3 +1,4 @@
+import 'package:connect_coffee/components/favourite_tile.dart';
 import 'package:connect_coffee/components/menu_item_tile.dart';
 import 'package:connect_coffee/models/connect_menu.dart';
 import 'package:connect_coffee/models/menu.dart';
@@ -73,7 +74,7 @@ class _CartPageState extends State<CartPage> {
                           MenuItems menuItem = value.userCart[index];
 
                           // return the tile for the item
-                          return MenuItemTile(
+                          return FavItemTile(
                             menuItems: menuItem,
                             onPressed: () {
                               removeFromCart(menuItem);
