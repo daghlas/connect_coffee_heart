@@ -83,15 +83,15 @@ class _ItemSlideState extends State<ItemSlide> {
                                   children: [
                                     Container(
                                         decoration: BoxDecoration(
-                                          color: Colors.brown,
+                                          color: Colors.grey,
                                           borderRadius:
-                                              BorderRadius.circular(20.0),
+                                              BorderRadius.circular(30.0),
                                         ),
-                                        child: const Padding(
-                                          padding: EdgeInsets.all(10.0),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
                                           child: Row(
                                             children: [
-                                              Text(
+                                              const Text(
                                                 'HOT',
                                                 style: TextStyle(
                                                   color: Colors.white,
@@ -99,11 +99,11 @@ class _ItemSlideState extends State<ItemSlide> {
                                                   fontFamily: 'IBMPlexSans',
                                                 ),
                                               ),
-                                              SizedBox(width: 5),
-                                              Icon(
-                                                Icons.favorite,
+                                              const SizedBox(width: 5),
+                                              Image.asset(
+                                                'assets/hot_coffee.png',
+                                                scale: 30,
                                                 color: Colors.white,
-                                                size: 20,
                                               ),
                                             ],
                                           ),
@@ -111,27 +111,31 @@ class _ItemSlideState extends State<ItemSlide> {
                                     const SizedBox(width: 30),
                                     Container(
                                         decoration: BoxDecoration(
-                                          color: Colors.grey,
+                                          color: Colors.brown,
                                           borderRadius:
-                                              BorderRadius.circular(20.0),
+                                              BorderRadius.circular(30.0),
+                                          border: Border.all(
+                                            color: Colors.white,
+                                            width: 1.5,
+                                          ),
                                         ),
-                                        child: const Padding(
-                                          padding: EdgeInsets.all(10.0),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(10.0),
                                           child: Row(
                                             children: [
-                                              Text(
-                                                'COLD',
+                                              const Text(
+                                                'ICED',
                                                 style: TextStyle(
                                                   color: Colors.white,
                                                   fontWeight: FontWeight.bold,
                                                   fontFamily: 'IBMPlexSans',
                                                 ),
                                               ),
-                                              SizedBox(width: 5),
-                                              Icon(
-                                                Icons.favorite,
+                                              const SizedBox(width: 5),
+                                              Image.asset(
+                                                'assets/iced_coffee.png',
+                                                scale: 30,
                                                 color: Colors.white,
-                                                size: 20,
                                               ),
                                             ],
                                           ),
